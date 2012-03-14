@@ -1,10 +1,20 @@
-= form_tag user_session_path do
-  = label_tag "Email"
-  = text_field_tag 'user[email]'
-  = label_tag "Contraseña"
-  = password_field_tag 'user[password]'
-  = check_box_tag 'user[remember_me]'
-  = label_tag "Remember me"
-  %button Sign in
-  = link_to "Forgot your password?", new_password_path('user')
-  = link_to "Sign up!", new_user_registration_path
+#header
+  %h2.white login
+#title_bar
+  = form_tag user_session_path do
+    %table
+      %tr#admin_user_email_input.email.input.required.autofocus.stringish
+        %td(width = "50px")= label_tag "Email"
+        %td= text_field_tag 'user[email]'
+      %tr#admin_user_password_input.password.input.required.autofocus.stringish
+        %td= label_tag "Contraseña"
+        %td= password_field_tag 'user[password]'
+      %tr#admin_user_remember_me_input.boleean.input.optional
+        %td= check_box_tag 'user[remember_me]'
+        %td= label_tag "Remember me"
+      %tr.commit_button
+        %td
+          %button#admin_user_submit.create Sign in
+      %tr
+        %td= link_to "Forgot your password?", new_password_path('user')
+        %td= link_to "Sign up!", new_user_registration_path

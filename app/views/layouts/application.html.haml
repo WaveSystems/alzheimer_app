@@ -6,15 +6,23 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #header
-      %p.notice= notice
-      %p.alert= alert
-    #navigation
-      #notifications
-    #content
-      = yield
-      -unless user_signed_in?
-        #login
-          = render "layouts/sign_in"
-    #footer(align = "center")
-      %p &copy; WaveSystems 2012
+    #wrapper
+      #header
+        %h1.white= link_to "Alzheimer", "/"
+        %ul#tabs.header-item
+        - if user_signed_in?
+          %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+          %h3#utility_nav.header_item= current_user.email
+      #title_bar    
+        %h1 Con H24
+      %div.flashes
+        %div.flash.flash_notice= notice
+        %div.flash.flash_alert= alert
+      #content
+        #render_views
+          = yield
+        #devise_login
+          -unless user_signed_in?
+            = render "layouts/sign_in"
+      #footer(align = "center")
+        %h3 &copy; WaveSystems 2012

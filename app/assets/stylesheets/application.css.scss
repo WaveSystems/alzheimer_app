@@ -12,22 +12,19 @@
  *= require_tree .
 */
 
-$navheight:60px;
-
-#header{
-  background-color:green;
-  height:70px;
-  position:absolute;
-}
-
-#navigation{
-  background-color:blue;
-  height:$navheight;
-}
-
-#notifications{
-  background-color:black;
+#devise_login{
   float:right;
-  height:$navheight;
-  width:60px;
+  width:300px;
+}
+
+#render_views{
+ position:relative;
+}
+
+.frontend{
+  float:right;
+}
+
+.white{
+  color:white;
 }
