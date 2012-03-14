@@ -5,19 +5,22 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body.logged_in
     #wrapper
       #header
-        %h1.white= link_to "Alzheimer", "/"
+        %h1.white= link_to "Inicio", "/"
         %ul#tabs.header-item
         - if user_signed_in?
           %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
           %h3#utility_nav.header_item= current_user.email
       #title_bar    
-        %h1 Con H24
-      %div.flashes
-        %div.flash.flash_notice= notice
-        %div.flash.flash_alert= alert
+        %h1 Alzheimer
+      - if notice
+        %div.flashes
+          %div.flash.flash_notice= notice
+      - if alert
+        %div.flashes
+          %div.flash.flash_alert= alert
       #content
         #render_views
           = yield
