@@ -10,6 +10,11 @@
       %p.notice= notice
       %p.alert= alert
     #navigation
+      #notifications
     #content
       = yield
-    #footer
+      -unless user_signed_in?
+        #login
+          = render "layouts/sign_in"
+    #footer(align = "center")
+      %p &copy; WaveSystems 2012
