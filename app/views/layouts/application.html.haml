@@ -24,8 +24,5 @@
       #content
         #render_views
           = yield
-        #devise_login
-          -unless user_signed_in?
-            = render "layouts/sign_in"
       #footer(align = "center")
         %h3 &copy; WaveSystems 2012

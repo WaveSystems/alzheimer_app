@@ -1,1 +1,4 @@
 %h1 page#index
+#devise_login
+  -unless user_signed_in?
+    = render "layouts/sign_in"
