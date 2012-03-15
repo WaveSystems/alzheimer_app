@@ -10,11 +10,13 @@
       #header
         %h1.white= link_to "Inicio", "/"
         %ul#tabs.header-item
+          %li#dashboard.current= link_to "Menú principal", :dashboard
         - if user_signed_in?
           %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
           %h3#utility_nav.header_item= current_user.email
       #title_bar    
-        %h1 Alzheimer
+        #item
+          %h1 Alzheimer
       - if notice
         %div.flashes
           %div.flash.flash_notice= notice

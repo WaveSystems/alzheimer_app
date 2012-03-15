@@ -5,4 +5,5 @@ Alzheimer::Application.routes.draw do
 
   devise_for :users
   root :to => 'page#index'
+  match '/dashboard' => 'page#dashboard', :as => :dashboard
 end
