@@ -51,6 +51,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    country-select (1.1.1)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -147,6 +148,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  country-select
   devise
   haml
   jquery-rails
