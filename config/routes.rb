@@ -5,9 +5,9 @@ Alzheimer::Application.routes.draw do
 
   devise_for :user, :path_names => { :sign_up => "register" } 
   root :to => 'page#index'
-  match '/dashboard' => 'page#dashboard', :as => :dashboard
-  match '/profile' => 'page#profile', :as => :profile
-  match '/create_profile' => 'page#create_profile', :as => :create_profile
-  match '/edit_profile' => 'page#edit_profile', :as => :edit_profile
-  match ':id/update_profile' => 'page#update_profile', :as => :update_profile
+  get '/dashboard' => 'page#dashboard', :as => :dashboard
+  get '/profile' => 'profiles#new', :as => :new_profile
+  post '/create_profile' => 'profiles#create'
+  get '/edit_profile' => 'profiles#edit', :as => :edit_profile
+  post ':id/update_profile' => 'profiles#update'
 end
