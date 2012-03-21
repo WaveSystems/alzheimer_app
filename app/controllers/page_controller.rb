@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-  before_filter :authenticate_user!, :only => [:dashboard, :profile, :create_profile, :edit_profile, :update_profile]
+  before_filter :authenticate_user!, :except => [:index]
 
   def index
     if user_signed_in?

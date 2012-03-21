@@ -1,10 +1,9 @@
-ActiveAdmin.register User do
-  filter :username
+ActiveAdmin.register AdminUser do
+  filter :email
 
   index do |t|
     t.column :id
     t.column :email
-    t.column :username
     default_actions
   end
 
