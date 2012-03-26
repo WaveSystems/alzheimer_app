@@ -22,7 +22,12 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(current_user.id)
+    begin
+      @profile = Profile.find(current_user.id)
+    rescue Exception => e
+      flash[:alert] = "Este usuario aun no tiene perfil para editar"
+      redirect_to :new_profile
+    end
   end
 
   def update
