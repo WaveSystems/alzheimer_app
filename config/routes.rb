@@ -12,10 +12,10 @@ Alzheimer::Application.routes.draw do
   post ':id/update_profile' => 'profiles#update'
 
   namespace :organizations do
-    get '/dashboard' => 'page#dashboard'
+    get '/dashboard' => 'organizations#dashboard'
     get '/new' => 'organizations#new'
     post '/create' => 'organizations#create'
-    get '/:id/edit' => 'organizations#edit'
+    get '/:id/edit' => 'organizations#edit', :as => :organizations_edit
     post '/:id/update' => 'organizations#update'
   end
 end
