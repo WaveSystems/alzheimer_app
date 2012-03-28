@@ -12,7 +12,8 @@ Alzheimer::Application.routes.draw do
   post ':id/update_profile' => 'profiles#update'
 
   namespace :organizations do
-    get '/dashboard' => 'organizations#dashboard'
+    get '/index' => 'organizations#index'
+    get '/:id/dashboard' => 'organizations#dashboard'
     get '/new' => 'organizations#new'
     post '/create' => 'organizations#create'
     get '/:id/edit' => 'organizations#edit', :as => :organizations_edit

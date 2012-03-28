@@ -1,8 +1,17 @@
 class Organizations::OrganizationsController < ApplicationController
   before_filter :authenticate_user!
 
-  def dashboard
+  def index
+    if @organizations = Organization.user_organizations(current_user.id)
+      flash[:notice]="Seleccione una organizacion para mostrar, o crea una nueva..."
+    else
+      flash[:alert]="Crea una organizacion"
+      :organizations_new
+    end
+  end
 
+  def dashboard
+    @organization = Organization.find(params[:id])
   end
   
   def new

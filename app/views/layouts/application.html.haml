@@ -15,6 +15,8 @@
             %h2#utility_nav= link_to "Menú principal", :dashboard
           %li#dashboard
             %h2#utility_nav= link_to "Editar perfil", :edit_profile
+          %li#dashboard
+            %h2#utility_nav= link_to "Organizaciones", :organizations_index
         - if user_signed_in?
           %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
           %h3#utility_nav.header_item= current_user.email

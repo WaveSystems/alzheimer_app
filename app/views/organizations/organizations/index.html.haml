@@ -1,0 +1,26 @@
+%table.index_table
+  %thead
+    %tr
+      %th Nombre
+      %th Descripción
+      %th Calle, número y código postal
+      %th Ciudad
+      %th Municipio
+      %th Estado
+      %th País
+      %th Telefono de contacto
+      %th
+  %tbody
+  - @organizations.each do |organization|
+    %tr
+      %td= organization.name
+      %td= organization.descripcion
+      %td= organization.address
+      %td= organization.city
+      %td= organization.county
+      %td= organization.state
+      %td= organization.country
+      %td= organization.phone
+      %td= link_to "Administrar", organizations_path(organization.id)
+
+= button_to "Crear nueva organización"
