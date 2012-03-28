@@ -1,0 +1,12 @@
+%div.main_content
+  = form_for @group, :url => :application_admin_organization_groups do |f|
+    %table.index_table
+      %tbody
+        %tr
+          %td( width = "250px")= f.label "Nombre(s) del grupo:"
+          %td= f.text_field :name
+        %tr
+          %td= f.label "Descripcion:"
+          %td= f.text_field :description
+        %td
+          %td( colspan = "2" )= f.submit "Guardar grupo"

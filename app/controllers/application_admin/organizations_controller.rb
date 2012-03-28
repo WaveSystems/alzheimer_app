@@ -1,4 +1,4 @@
-class Admin::OrganizationsController < ApplicationController
+class ApplicationAdmin::OrganizationsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
@@ -6,7 +6,7 @@ class Admin::OrganizationsController < ApplicationController
       flash[:notice]="Seleccione una organizacion para mostrar, o crea una nueva..."
     else
       flash[:alert]="Crea una organizacion"
-      :organizations_new
+      redirect_to :new_application_admin_organizations
     end
   end
 
@@ -15,7 +15,7 @@ class Admin::OrganizationsController < ApplicationController
       @groups = Group.organization_groups(params[:id])
     else
       flash[:alert]="Organizacion no valida!"
-      redirect_to organizations_index_path
+      redirect_to :application_admin_organizations
     end
   end
   
@@ -27,22 +27,22 @@ class Admin::OrganizationsController < ApplicationController
     @organization = Organization.new(params[:organization].merge(:user_id => current_user.id))
     if @organization.save
       flash[:notice]="Se ha creado exitosamente la organizacion..."
-      redirect_to organizations_dashboard_path
+      redirect_to :application_admin_organizations
     else
       flash[:alert]="Ha ocurrido un error, intente nuevamente..."
-      redirect_to organizations_new_path
+      redirect_to :new_application_admin_organizations
     end
   end
 
   def edit
-    @organization = Organization.find(params[:id])
+    @organization = Organization.find(params[:organization_id])
   end
   
   def update
-    @organization = Organization.find(params[:id])
+    @organization = Organization.find(params[:organization_id])
     if @organization.update_attributes(params[:organization])
       flash[:notice]="Se han actualizado exitosamente los cambios"
-      redirect_to organizations_path(params[:id])
+      redirect_to dashboard_application_admin_organization_path(params[:organization_id])
     else
       flash[:alert]="Ups! Algo salio mal, intente de nuevo..."
       redirect_to organizations_edit_path(params[:id])
@@ -50,11 +50,13 @@ class Admin::OrganizationsController < ApplicationController
   end
 
   def delete
-    if Organization.find(params[:id]).delete
+    @organization = Organization.find(params[:organization_id])
+    if @organization.destroy
       flash[:notice]="Se ha eliminado la organizacion exitosamente"
+      redirect_to :application_admin_organizations
     else
       flash[:alert]="Ups! Algo salio mal, intente de nuevo..."
-      redirect_to organizations_dashboard_path(params[:id])
+      redirect_to :dashboard_application_admin_organizations
     end
   end
 end

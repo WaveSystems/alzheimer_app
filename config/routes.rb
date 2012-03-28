@@ -13,9 +13,15 @@ Alzheimer::Application.routes.draw do
   get '/edit_profile' => 'profiles#edit', :as => :edit_profile
   post ':id/update_profile' => 'profiles#update'
 
-  namespace :admin do
-    resources :organizations do
+  namespace :application_admin do
+    resources :organizations, :only => :index do
       get '/dashboard' => 'organizations#dashboard', :on => :member
+      get '/new' => 'organizations#new', :as => :new, :on => :collection
+      post '/create' => 'organizations#create', :as => :create, :on => :collection
+      get '/edit' => 'organizations#edit', :as => :edit
+      put '/update' => 'organizations#update', :as => :update
+      delete '/delete' => 'organizations#delete', :as => :delete
+
       resources :groups, :except => [:index] do
         get '/dashboard' => 'groups#dashboard', :on => :member
       end

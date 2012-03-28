@@ -1,0 +1,23 @@
+%h2(align="center")= "#{@organization.name} Panel de administracion"
+
+%h3 Grupos
+%table.index_table
+  %thead
+    %tr
+      %th Nombre
+      %th Descripción
+      %th 
+  %tbody
+  - @groups.each do |group|
+    %tr
+      %td= group.name
+      %td= group.description
+      %td= link_to "Administrar",dashboard_application_admin_organization_group_path(params[:id],group.id) 
+
+#sidebar
+  #filters_sidebar_section.sidebar_section.panel
+    %h3 something
+    %div.panel_contents
+      %span= button_to "Nuevo grupo", new_application_admin_organization_group_path(params[:id]), :method => "get"
+      %span= button_to "Editar organización", application_admin_organization_edit_path(params[:id]), :method => "get"
+      %span= button_to "Eliminar organización",application_admin_organization_delete_path(params[:id]), :method => "delete"
