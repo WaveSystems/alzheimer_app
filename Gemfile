@@ -10,6 +10,7 @@ gem 'devise'
 gem 'haml'
 gem 'activeadmin'
 gem 'country-select'
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.

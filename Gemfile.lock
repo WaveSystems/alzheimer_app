@@ -152,6 +152,7 @@ DEPENDENCIES
   devise
   haml
   jquery-rails
+  kaminari
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sqlite3
