@@ -24,8 +24,9 @@ Alzheimer::Application.routes.draw do
       put '/update' => 'organizations#update', :as => :update
       delete '/delete' => 'organizations#delete', :as => :delete
 
-      resources :groups, :except => [:index] do
+      resources :groups, :except => [:index, :destroy] do
         get '/dashboard' => 'groups#dashboard', :on => :member
+        delete '/destroy' => 'groups#destroy', :as => :destroy
       end
     end
   end
