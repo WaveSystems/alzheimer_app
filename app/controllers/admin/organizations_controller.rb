@@ -1,4 +1,4 @@
-class Organizations::OrganizationsController < ApplicationController
+class Admin::OrganizationsController < ApplicationController
   before_filter :authenticate_user!
 
   def index

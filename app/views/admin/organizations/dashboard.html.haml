@@ -18,5 +18,6 @@
   #filters_sidebar_section.sidebar_section.panel
     %h3 something
     %div.panel_contents
-      %span= button_to "Nuevo grupo", groups_new_path
+      %span= button_to "Nuevo grupo", groups_new_path, :method => "get"
       %span= button_to "Editar organización", organizations_edit_path(params[:id])
+      %span= button_to "Eliminar organización", organizations_delete_path(params[:id]), :method => "delete"
