@@ -1,11 +1,11 @@
 class ApplicationAdmin::OrganizationsController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :validate_belongs_to_group!
+  before_filter :authenticate_application_admin_user!
 
   def index
-    if @organizations = Organization.user_organizations(current_user.id)
+    begin
+     @organizations = Organization.user_organizations(current_application_admin_user.id)
       flash[:notice]="Seleccione una organizacion para mostrar, o crea una nueva..."
-    else
+    rescue Exception => e
       flash[:alert]="Crea una organizacion"
       redirect_to :new_application_admin_organizations
     end
@@ -25,7 +25,7 @@ class ApplicationAdmin::OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization.new(params[:organization].merge(:user_id => current_user.id))
+    @organization = Organization.new(params[:organization].merge(:user_id => current_application_admin_user.id))
     if @organization.save
       flash[:notice]="Se ha creado exitosamente la organizacion..."
       redirect_to :application_admin_organizations
@@ -61,12 +61,4 @@ class ApplicationAdmin::OrganizationsController < ApplicationController
     end
   end
   
-  private
-  
-  def validate_belongs_to_group!
-    unless current_user.group == nil
-      redirect_to :root
-      flash[:alert]="No puedes crear organizaciones"
-    end
-  end
 end
