@@ -11,7 +11,12 @@ class Organizations::OrganizationsController < ApplicationController
   end
 
   def dashboard
-    @organization = Organization.find(params[:id])
+    if @organization = Organization.find(params[:id])
+      @groups = Group.organization_groups(params[:id])
+    else
+      flash[:alert]="Organizacion no valida!"
+      redirect_to organizations_index_path
+    end
   end
   
   def new
@@ -35,9 +40,9 @@ class Organizations::OrganizationsController < ApplicationController
   
   def update
     @organization = Organization.find(params[:id])
-    if @organiztaion.update_attributes(params[:organization])
+    if @organization.update_attributes(params[:organization])
       flash[:notice]="Se han actualizado exitosamente los cambios"
-      redirect_to organizations_dashboard
+      redirect_to organizations_path(params[:id])
     else
       flash[:alert]="Ups! Algo salio mal, intente de nuevo..."
       redirect_to organizations_edit_path(params[:id])
@@ -45,5 +50,11 @@ class Organizations::OrganizationsController < ApplicationController
   end
 
   def delete
+    if Organization.find(params[:id]).delete
+      flash[:notice]="Se ha eliminado la organizacion exitosamente"
+    else
+      flash[:alert]="Ups! Algo salio mal, intente de nuevo..."
+      redirect_to organizations_dashboard_path(params[:id])
+    end
   end
 end

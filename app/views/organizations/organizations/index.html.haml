@@ -23,4 +23,4 @@
       %td= organization.phone
       %td= link_to "Administrar", organizations_path(organization.id)
 
-= button_to "Crear nueva organización"
+= button_to "Crear nueva organización", organizations_new_path, :method => "get"

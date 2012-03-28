@@ -13,4 +13,7 @@ class PageController < ApplicationController
       flash[:notice] = "Debe llenarse el perfil del paciente primero"
     end
   end
+
+  def exercises
+  end
 end

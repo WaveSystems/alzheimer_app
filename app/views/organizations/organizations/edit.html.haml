@@ -1,0 +1,30 @@
+%div.main_content
+  = form_for @organization, :url => :organizations_update do |f|
+    %table.index_table
+      %tbody
+        %tr
+          %td( width = "250px")= f.label "Nombre(s) de la organizacion:"
+          %td= f.text_field :name
+        %tr
+          %td= f.label "Descripcion:"
+          %td= f.text_field :descripcion
+        %tr
+          %td= f.label "Dirección (Calle, número y código postal):"
+          %td= f.text_field :address
+        %tr
+          %td= f.label "Ciudad"
+          %td= f.text_field :city
+        %tr
+          %td= f.label "Municipio:"
+          %td= f.text_field :county
+        %tr
+          %td= f.label "Estado:"
+          %td= f.text_field :state
+        %tr
+          %td= f.label "País:"
+          %td= f.country_select :country
+        %tr
+          %td= f.label "Teléfono:"
+          %td= f.text_field :phone
+        %td
+          %td( colspan = "2" )= f.submit "Guardar organización"
