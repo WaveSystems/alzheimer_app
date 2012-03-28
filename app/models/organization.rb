@@ -3,6 +3,6 @@ class Organization < ActiveRecord::Base
   belongs_to :application_admin_user
 
   def self.user_organizations(id)
-    self.where(:user_id => id)
+    self.where(:application_admin_user_id => id)
   end
 end

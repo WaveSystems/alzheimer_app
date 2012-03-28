@@ -12,10 +12,16 @@ class ApplicationAdmin::OrganizationsController < ApplicationController
   end
 
   def dashboard
-    if @organization = Organization.find(params[:id])
-      @groups = Group.organization_groups(params[:id])
-    else
-      flash[:alert]="Organizacion no valida!"
+    begin
+      current_application_admin_user.organizations.find(params[:id])
+      if @organization = Organization.find(params[:id])
+        @groups = Group.organization_groups(params[:id])
+      else
+        flash[:alert]="Organizacion no valida!"
+        redirect_to :application_admin_organizations
+      end
+    rescue Exception => e
+      flash[:alert]="No puedes administrar una organizacion que no te pertenece..."
       redirect_to :application_admin_organizations
     end
   end
@@ -25,7 +31,7 @@ class ApplicationAdmin::OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = Organization.new(params[:organization].merge(:user_id => current_application_admin_user.id))
+    @organization = Organization.new(params[:organization].merge(:application_admin_user_id => current_application_admin_user.id))
     if @organization.save
       flash[:notice]="Se ha creado exitosamente la organizacion..."
       redirect_to :application_admin_organizations
