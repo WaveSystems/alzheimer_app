@@ -1,5 +1,6 @@
 class ApplicationAdmin::OrganizationsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :validate_belongs_to_group!
 
   def index
     if @organizations = Organization.user_organizations(current_user.id)
@@ -57,6 +58,15 @@ class ApplicationAdmin::OrganizationsController < ApplicationController
     else
       flash[:alert]="Ups! Algo salio mal, intente de nuevo..."
       redirect_to :dashboard_application_admin_organizations
+    end
+  end
+  
+  private
+  
+  def validate_belongs_to_group!
+    unless current_user.group == nil
+      redirect_to :root
+      flash[:alert]="No puedes crear organizaciones"
     end
   end
 end

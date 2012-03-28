@@ -1,6 +1,6 @@
 %h2 Aqui va algo de texto introductorio
 
-= link_to "Crear organización", organizations_new_path
+= link_to "Crear organización", new_application_admin_organizations_path
 #devise_login
   -unless user_signed_in?
     = render "layouts/sign_in"
