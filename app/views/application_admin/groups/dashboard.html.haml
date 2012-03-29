@@ -4,13 +4,19 @@
 %table.index_table
   %thead
     %tr
-      %th Nombre
-      %th Descripción
+      %th Email
+      %th Nombre(s)
+      %th Apellidos
+      %th Fecha de nacimiento
+      %th Nombre del tutor
   %tbody
   - @users.each do |user|
     %tr
       %td= user.email
-      %td= user.username
+      %td= user.profile.firstname
+      %td= user.profile.lastname
+      %td= user.profile.birthdate
+      %td= user.profile.tutor_name
 
 #sidebar
   #filters_sidebar_section.sidebar_section.panel

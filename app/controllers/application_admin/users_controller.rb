@@ -15,13 +15,4 @@ class ApplicationAdmin::UsersController < ApplicationController
       redirect_to new_application_admin_organization_group_user_path
     end
   end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
