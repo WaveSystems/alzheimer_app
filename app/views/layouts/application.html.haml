@@ -18,17 +18,18 @@
           %li#dashboard
             %h2#utility_nav= link_to "Editar perfil", :edit_profile
           %li#dashboard
-            %h2#utility_nav= link_to "Organizaciones", '/application_admin/organizations'
+            %h2#utility_nav= link_to "Administrador", '/application_admin/organizations'
         - if user_signed_in?
           %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
           %h3#utility_nav.header_item= current_user.email
-        - if application_admin_user_signed_in?
-          %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_application_admin_user_session_path, :method => "delete"
-          %h3#utility_nav.header_item= current_application_admin_user.email
       #title_bar    
         #item
           #image
             = image_tag('Reminiscence1.png')
+          #admin_session
+            - if application_admin_user_signed_in?
+              %h3#admin_session_email.header_item= current_application_admin_user.email
+              %h3#admin_session_link.header_item= link_to "Cerrar sesión", destroy_application_admin_user_session_path, :method => "delete"
       - if notice
         %div.flashes
           %div.flash.flash_notice= notice
