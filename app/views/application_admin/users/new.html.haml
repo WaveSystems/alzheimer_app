@@ -1,0 +1,18 @@
+%div.main_content
+= form_for @user, :url => :application_admin_organization_group_users  do |f|
+  %table.index_table
+    %tbody
+      %tr
+        %td(width = "100px")= f.label "Nombre de usuario"
+        %td= f.text_field :username
+      %tr
+        %td= f.label "Email"
+        %td= f.email_field :email
+      %tr
+        %td= f.label "Contraseña"
+        %td= f.password_field :password
+      %tr
+        %td= f.label "Confirmar contraseña"
+        %td= f.password_field :password_confirmation
+      %tr
+        %td(colspan = "2")= f.submit "Crear usuario"

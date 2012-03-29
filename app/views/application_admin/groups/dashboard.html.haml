@@ -4,6 +4,6 @@
   #filters_sidebar_section.sidebar_section.panel
     %h3 something
     %div.panel_contents
-      %span= button_to "Agregar nuevo usuario", '#'
+      %span= button_to "Agregar nuevo usuario", new_application_admin_organization_group_user_path(params[:organization_id], params[:id]), :method => "get" 
       %span= button_to "Editar grupo", edit_application_admin_organization_group_path(params[:organization_id], params[:id]), :method => "get"
       %span= button_to "Eliminar grupo",application_admin_organization_group_destroy_path(params[:organization_id],params[:id]), :method => "delete"

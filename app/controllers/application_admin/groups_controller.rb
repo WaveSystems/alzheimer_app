@@ -2,6 +2,7 @@ class ApplicationAdmin::GroupsController < ApplicationController
   
   def dashboard
     @group = Group.find(params[:id])
+    @users = User.find(params[:id])
   end
 
   def new

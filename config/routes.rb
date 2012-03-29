@@ -27,6 +27,10 @@ Alzheimer::Application.routes.draw do
       resources :groups, :except => [:index, :destroy] do
         get '/dashboard' => 'groups#dashboard', :on => :member
         delete '/destroy' => 'groups#destroy', :as => :destroy
+
+        resources :users, :except => [:index, :destroy] do
+          delete '/destroy' => 'users#destroy', :as => :destroy
+        end
       end
     end
   end
