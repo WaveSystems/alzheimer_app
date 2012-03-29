@@ -18,6 +18,9 @@
           %li#dashboard
             %h2#utility_nav= link_to "Editar perfil", :edit_profile
           %li#dashboard
+            %h2#utility_nav= link_to "Grupos", :groups
+        -unless user_signed_in?
+          %li#dashboard
             %h2#utility_nav= link_to "Administrador", '/application_admin/organizations'
         - if user_signed_in?
           %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"

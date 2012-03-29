@@ -1,0 +1,16 @@
+%table.index_table
+  %thead
+    %tr
+      %th Nombre
+      %th Descripción
+      %th
+  %tbody
+  - @groups.each do |group|
+    %tr
+      %td= group.name
+      %td= group.description
+      - unless current_user.group_id == group.id
+        %td= button_to "Unirse", join_group_path(group.id)
+      -else
+        %td Grupo actual
+        
