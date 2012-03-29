@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_filter :check_application_admin_user!
   before_filter :authenticate_user!
 
   def new
@@ -38,6 +39,14 @@ class ProfilesController < ApplicationController
     else
       flash[:alert]="Error al actualizar intente de nuevo..."
       redirect_to :new_profile
+    end
+  end
+
+  private
+  def check_application_admin_user!
+    if application_admin_user_signed_in?
+      flash[:alert]="Operacion no permitida!"
+      redirect_to '/application_admin/organizations'
     end
   end
 end
