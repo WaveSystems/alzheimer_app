@@ -18,6 +18,13 @@
     </tr>
 
     <tr>
+      <% if devise_mapping.rememberable? -%>
+      <td><%= f.check_box :remember_me %></td>
+      <td><%= f.label "Recordar contraseña" %></td>
+      <% end -%>
+    <tr>
+
+    <tr>
       <td colspan = "2"><%= f.submit "Iniciar sesión" %></td>
     </tr>
     <% end %>

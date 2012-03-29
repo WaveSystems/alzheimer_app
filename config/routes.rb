@@ -30,6 +30,7 @@ Alzheimer::Application.routes.draw do
 
         resources :users, :except => [:index, :destroy] do
           delete '/destroy' => 'users#destroy', :as => :destroy
+          resources :profiles, :only => [:new, :create]
         end
       end
     end

@@ -1,5 +1,17 @@
 %h2(align="center")= "#{@group.name} Panel de administracion"
 
+%h3 Grupos
+%table.index_table
+  %thead
+    %tr
+      %th Nombre
+      %th Descripción
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.email
+      %td= user.username
+
 #sidebar
   #filters_sidebar_section.sidebar_section.panel
     %h3 something
