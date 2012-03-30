@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $('input.answer').keypress(function(e){
+    if(e.keyCode == 13){
+      console.log('changed');
+    }
+  });
+});

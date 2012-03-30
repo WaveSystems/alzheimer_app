@@ -1,10 +1,3 @@
-$(document).ready(function(){
-  $('input').change(function(){
-    var x = $(this).attr();
-    console.log(x);
-    console.log('changed');
-  });
-});
 
 
 
