@@ -12,6 +12,8 @@ Alzheimer::Application.routes.draw do
   get '/groups' => 'page#groups', :as => :groups
   post ':id/groups' => 'page#join_group', :as => :join_group
 
+  post '/question/:id' => 'questions#question'
+
   get '/profile' => 'profiles#new', :as => :new_profile
   post '/create_profile' => 'profiles#create'
   get '/edit_profile' => 'profiles#edit', :as => :edit_profile
