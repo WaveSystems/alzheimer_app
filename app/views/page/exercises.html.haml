@@ -1,3 +1,16 @@
-%label.question= @question.question
-%input.answer
-%input(type = "hidden" value = '1' id = 'id' )
+#ex(align = "center")
+  #ex-first
+    =form_tag '/load_first', :remote => true do
+      = button_to "Ejercicio 1", "#", :class => "exercise1"
+
+  #ex-second
+    =form_tag '/load_second', :remote => true do
+      = button_to "Ejercicio 2", "#", :class => "exercise2"
+
+  #ex-third
+    =form_tag '/load_third', :remote => true do
+      = button_to "Ejercicio 3", "#", :class => "exercise3"
+%br
+%br
+
+#exercises

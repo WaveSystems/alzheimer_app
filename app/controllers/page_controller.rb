@@ -19,9 +19,17 @@ class PageController < ApplicationController
     if current_user.profile.nil?
       redirect_to :new_profile
       flash[:notice] = "Debe llenarse el perfil del paciente primero"
-    else
-      @question = Question.first
     end
+  end
+
+  def load_first
+    @questions = Question.all
+  end
+
+  def load_second
+  end
+
+  def load_third
   end
 
   def groups

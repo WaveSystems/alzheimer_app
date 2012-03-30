@@ -9,6 +9,9 @@ Alzheimer::Application.routes.draw do
   root :to => 'page#index'
   get '/dashboard' => 'page#dashboard', :as => :dashboard
   get '/exercises' => 'page#exercises', :as => :exercises
+  post '/load_first' => 'page#load_first'
+  post '/load_second' => 'page#load_second'
+  post '/load_third' => 'page#load_third'
   get '/groups' => 'page#groups', :as => :groups
   post ':id/groups' => 'page#join_group', :as => :join_group
 
