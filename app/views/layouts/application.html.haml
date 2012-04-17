@@ -5,42 +5,24 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body.logged_in
-    #wrapper
-      #header
-        %ul#tabs.header-item
-          %li#dashboard
-            %h2#utility_nav= link_to "Inicio", "/"
-          %li#dashboard
-            %h2#utility_nav= link_to "Menú principal", :dashboard
-          %li#dashboard
-            %h2#utility_nav= link_to "Ejercicios", :exercises
-          %li#dashboard
-            %h2#utility_nav= link_to "Editar perfil", :edit_profile
-          %li#dashboard
-            %h2#utility_nav= link_to "Grupos", :groups
-        -unless user_signed_in?
-          %li#dashboard
-            %h2#utility_nav= link_to "Administrador", '/application_admin/organizations'
-        - if user_signed_in?
-          %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
-          %h3#utility_nav.header_item= current_user.email
-      #title_bar    
-        #item
-          #image
-            = image_tag('Reminiscence1.png')
-          #admin_session
-            - if application_admin_user_signed_in?
-              %h3#admin_session_email.header_item= current_application_admin_user.email
-              %h3#admin_session_link.header_item= link_to "Cerrar sesión", destroy_application_admin_user_session_path, :method => "delete"
+  %body
+    %header.topnav
+      %nav.navbar.navbar-fixed-top
+        %div.navbar-inner
+          %div.container
+            = link_to "Reminiscense", :root, :class => 'brand'
+            = render 'layouts/top-navbar'
+    %div
       - if notice
-        %div.flashes
-          %div.flash.flash_notice= notice
-      - if alert
-        %div.flashes
-          %div.flash.flash_alert= alert
-      #content
-        #render_views
-          = yield
-      #footer(align = "center")
-        %h3 &copy; WaveSystems 2012
+        %div.alert.alert-success
+          %a.close x
+          = notice
+      - elsif alert
+        %div.alert
+          %a.close x
+          %div= alert
+    %article
+      #render_views
+        = yield
+    %footer(align = "center")
+      %h3 &copy; WaveSystems 2012

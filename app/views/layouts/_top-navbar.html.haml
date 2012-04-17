@@ -1,0 +1,12 @@
+%ul.nav
+  %li= link_to "Inicio", "/"
+  %li= link_to "Menú principal", :dashboard
+  %li= link_to "Ejercicios", :exercises
+  %li= link_to "Editar perfil", :edit_profile
+  %li= link_to "Grupos", :groups
+  - if user_signed_in?
+    %li
+      %p= current_user.email
+    %li= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+  - else
+    %li= link_to "Iniciar sesión", new_user_session_path
