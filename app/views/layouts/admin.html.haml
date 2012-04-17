@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title Alzheimer
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body.logged_in
+    #wrapper
+      #header
+        %ul#tabs.header-item
+          %li#dashboard
+            %h3#utility_nav= link_to "Organizaciones", :application_admin_organizations
+          %li#dashboard
+            %h3#utility_nav= link_to "Nueva Organizacion", :new_application_admin_organizations
+        - if application_admin_user_signed_in?
+          %h3#utility_nav.header_item= link_to "Cerrar sesión", destroy_application_admin_user_session_path, :method => "delete"
+          %h3#utility_nav.header_item= current_application_admin_user.email
+      #title_bar    
+        #item
+          #image
+            = image_tag('Reminiscence1.png')
+          #admin_session
+      - if notice
+        %div.flashes
+          %div.flash.flash_notice= notice
+      - if alert
+        %div.flashes
+          %div.flash.flash_alert= alert
+      #content
+        #render_views
+          = yield
+      #footer(align = "center")
+        %h3 &copy; WaveSystems 2012
