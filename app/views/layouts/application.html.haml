@@ -10,16 +10,14 @@
       %nav.navbar.navbar-fixed-top
         %div.navbar-inner
           %div.container
-            = link_to "Reminiscense", :root, :class => 'brand'
+            .brand Reminiscense
             = render 'layouts/top-navbar'
     %div
       - if notice
         %div.alert.alert-success
-          %a.close x
           = notice
       - elsif alert
         %div.alert
-          %a.close x
           %div= alert
     %article
       #render_views
