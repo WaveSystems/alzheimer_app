@@ -1,1 +1,13 @@
-%div(align = "center")= image_tag('memoria.jpg')
+:javascript
+  $(function(){
+    $('.carousel').carousel();
+  });
+
+#myCarousel.carousel.slide
+  .carousel-inner
+    .item.active
+      %img{:src => 'assets/memoria.jpg'}
+    .item
+      %img{:src => 'assets/memoria.jpg'}
+  %a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev")
+  %a(class = "right carousel-control" href = "#myCarousel" data-slide = "next")

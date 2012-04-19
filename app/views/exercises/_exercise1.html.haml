@@ -5,14 +5,34 @@
       %th
         %h3 Problema
       %th 
-        %h3 Respuesta
+      %th
       %th
   %tbody
   - @questions.each do |question|
+    :javascript
+      $(document).ready(function(){
+        $('.submit#{question.id}').click(function(){
+          $.ajax({
+            url: 'question/#{question.id}',
+            type: 'GET'
+          }).done(function(answer){
+            if($('.input#{question.id}').val() == answer){
+              $('.answer#{question.id}').empty();
+              $('.answer#{question.id}').append('Correcto!');
+            }else{
+              $('.answer#{question.id}').empty();
+              $('.answer#{question.id}').append('Incorrecto...');
+            }
+          });
+        });
+      });
     %tr
       %td
         %h3= question.question
       %td
-        %input.answer(name = 'a[answer]' type = "text")
+        %input(class = "input#{question.id}" name = 'a[answer]' type = "text" placeholder = "Escribe tu respuesta aquí...")
       %td
-        %h3 No contestado
+        %span(class = "submit#{question.id}")
+          %a.btn.btn-inverse Responder
+      %td
+        %h3(class = "answer#{question.id}") No contestado
