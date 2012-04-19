@@ -1,6 +1,4 @@
 
-
-
 // var id = Array.new
 // children().each(function (item))
 // item.append('escape_javascript(render :partial => "ejercicio'+id+'")');

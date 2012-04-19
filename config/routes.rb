@@ -12,10 +12,8 @@ Alzheimer::Application.routes.draw do
   post '/load_first' => 'page#load_first'
   post '/load_second' => 'page#load_second'
   post '/load_third' => 'page#load_third'
-  get '/groups' => 'page#groups', :as => :groups
-  post ':id/groups' => 'page#join_group', :as => :join_group
 
-  post '/question/:id' => 'questions#question'
+  get '/question/:id' => 'questions#question'
 
   get '/profile' => 'profiles#new', :as => :new_profile
   post '/create_profile' => 'profiles#create'
