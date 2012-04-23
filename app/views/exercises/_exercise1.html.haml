@@ -16,7 +16,7 @@
             url: 'question/#{question.id}',
             type: 'GET'
           }).done(function(answer){
-            if($('.input#{question.id}').val() == answer){
+            if($('.input#{question.id}').val() == answer.answer){
               $('.answer#{question.id}').empty();
               $('.answer#{question.id}').append('Correcto!');
             }else{
