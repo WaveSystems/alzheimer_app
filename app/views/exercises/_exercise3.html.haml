@@ -6,8 +6,9 @@
 #myCarousel.carousel.slide
   .carousel-inner
     .item.active
-      %img{:src => 'assets/memoria.jpg'}
-    .item
-      %img{:src => 'assets/memoria.jpg'}
+      %img{:src => "assets/memoria.jpg"}
+    - @memorias.each do |memoria|
+      .item
+        = image_tag memoria.image.url(:medium)
   %a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev")
   %a(class = "right carousel-control" href = "#myCarousel" data-slide = "next")

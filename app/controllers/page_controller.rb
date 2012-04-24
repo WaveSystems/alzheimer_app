@@ -31,6 +31,7 @@ class PageController < ApplicationController
   end
 
   def load_third
+    @memorias = Memoria.all
   end
 
   private
