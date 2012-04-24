@@ -7,5 +7,9 @@ ActiveAdmin.register Gnosia do
     end
     f.buttons
   end
+
+  index :as => :grid do |gnosia|
+    link_to(image_tag(gnosia.image.url(:medium)))
+  end
   
 end

@@ -1,125 +1,16 @@
 %h2(align = "center") Escriba los nombres de los siguientes animales
 
 %ul.thumbnails
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/leon.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/tigre.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/gorila.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/leon.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/tigre.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-
-%ul.thumbnails
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/leon.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/tigre.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/gorila.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/leon.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
-  %li.span3
-    .thumbnail
-      %img{:src => 'assets/tigre.png', :alt => ""}
-      %table
-        %tr
-          %td(colspan = "2")
-            %p Qué animal es?
-        %tr
-          %td
-            %input{:type => "text", :class => "input-small"}
-          %td
-            %a.btn.btn-inverse Responder
+  - @gnosias.each do |gnosia|
+    %li.span3
+      .thumbnail
+        = image_tag gnosia.image.url(:medium)
+        %table
+          %tr
+            %td(colspan = "2")
+              %p Qué animal es?
+          %tr
+            %td
+              %input{:type => "text", :class => "input-small"}
+            %td
+              %a.btn.btn-inverse Responder

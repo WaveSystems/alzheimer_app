@@ -27,6 +27,7 @@ class PageController < ApplicationController
   end
 
   def load_second
+    @gnosias = Gnosia.all
   end
 
   def load_third
