@@ -5,4 +5,9 @@ class QuestionsController < ApplicationController
     respond_with @question
   end
 
+  def gnosia
+    @gnosia = Gnosia.find(params[:id])
+    respond_with @gnosia
+  end
+
 end

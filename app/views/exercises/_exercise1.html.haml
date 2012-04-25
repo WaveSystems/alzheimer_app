@@ -28,11 +28,13 @@
       });
     %tr
       %td
-        %h3= question.question
+        %h3
+          %b= question.question
       %td
         %input(class = "input#{question.id}" name = 'a[answer]' type = "text" placeholder = "Escribe tu respuesta aquí...")
       %td
         %span(class = "submit#{question.id}")
           %a.btn.btn-inverse Responder
       %td
-        %h3(class = "answer#{question.id}") No contestado
+        %h3
+          %b(class = "answer#{question.id}") No contestado

@@ -14,6 +14,7 @@ Alzheimer::Application.routes.draw do
   post '/load_third' => 'page#load_third'
 
   get '/question/:id' => 'questions#question'
+  get '/gnosia/:id' => 'questions#gnosia'
 
   get '/profile' => 'profiles#new', :as => :new_profile
   post '/create_profile' => 'profiles#create'

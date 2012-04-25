@@ -2,6 +2,24 @@
 
 %ul.thumbnails
   - @gnosias.each do |gnosia|
+    :javascript
+      $(document).ready(function(){
+        $('.btn.btn-inverse.submit#{gnosia.id}').click(function(){
+          $.ajax({
+            url: 'gnosia/#{gnosia.id}',
+            type: 'GET'
+          }).done(function(answer){
+            console.log(answer);
+            if($('.input#{gnosia.id}').val() == answer.answer){
+              $('.answer#{gnosia.id}').empty();
+              $('.answer#{gnosia.id}').append('Correcto!');
+            }else{
+              $('.answer#{gnosia.id}').empty();
+              $('.answer#{gnosia.id}').append('Incorrecto...');
+            }
+          });
+        });
+      });
     %li.span3
       .thumbnail
         = image_tag gnosia.image.url(:medium)
@@ -11,6 +29,9 @@
               %p Qué animal es?
           %tr
             %td
-              %input{:type => "text", :class => "input-small"}
+              %input{:type => "text", :class => "input-small input#{gnosia.id}"}
             %td
-              %a.btn.btn-inverse Responder
+              %a{:class => "btn btn-inverse submit#{gnosia.id}"} Responder
+          %tr
+            %td{:colspan => "2"}
+              %h2{:class => "answer#{gnosia.id}"}
