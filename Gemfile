@@ -12,6 +12,7 @@ gem 'activeadmin'
 gem 'country-select'
 gem 'kaminari'
 gem 'paperclip'
+gem 'event-calendar', :require => 'event_calendar'
 
 # Gems used only for assets and not required
 # in production environments by default.
