@@ -1,7 +1,7 @@
 %ul.nav
   %li= link_to "Inicio", "/"
-  %li= link_to "Menú principal", :dashboard
   %li= link_to "Ejercicios", :exercises
+  %li= link_to "Eventos", :calendar
   %li= link_to "Editar perfil", :edit_profile
   - if user_signed_in?
     %li
