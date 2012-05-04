@@ -1,0 +1,6 @@
+#calendar_view(align = "center")
+  %h1 Calendario
+  = button_to "Nuevo evento", :new_event
+  
+  #calendar
+    = raw(event_calendar)
