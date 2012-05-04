@@ -6,9 +6,14 @@
           %h3 Crear nuevo evento
       %tr
         %td 
-          %h3 Nombre o descripción:
+          %h3 Nombre del evento:
         %td
           %h3= f.text_field :name
+      %tr
+        %td 
+          %h3 Descripción del evento:
+        %td
+          %h3= f.text_area :description
       %tr
         %td 
           %h3 Fecha de inicio:

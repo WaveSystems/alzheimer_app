@@ -14,7 +14,7 @@ class CalendarController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
+    @event = current_user.events.build(params[:event])
     if @event.save
       flash[:notice] = "Evento guardado exitosamente"
       redirect_to :calendar
@@ -25,6 +25,6 @@ class CalendarController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:event_id])
+    @event = Event.find(params[:id])
   end
 end

@@ -1,0 +1,18 @@
+%table.index_table
+  %tbody
+    %tr
+      %th{:colspan => '2'}
+        %h3{:align => 'center'}= @event.name
+    %tr
+      %td{:colspan => '2'}
+        %h3= @event.description
+    %tr
+      %td
+        %h3 Fecha de inicio:
+      %td
+        %h3= @event.start_at.to_s(:pretty)
+    %tr
+      %td
+        %h3 Fecha de termino:
+      %td
+        %h3= @event.end_at.to_s(:pretty)
