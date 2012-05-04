@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile
+  has_many :events
   belongs_to :group
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
