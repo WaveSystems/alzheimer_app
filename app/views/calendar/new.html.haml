@@ -1,1 +1,21 @@
-
+= form_for @event, :url => :create_event do |f|
+  %table.index_table
+    %tbody
+      %tr
+        %th{:colspan => '2'}
+          %h3 Crear nuevo evento
+      %tr
+        %td 
+          %h3 Nombre o descripción:
+        %td
+          %h3= f.text_field :name
+      %tr
+        %td 
+          %h3 Fecha de inicio:
+        %td= f.datetime_select :start_at
+      %tr
+        %td
+          %h3 Fecha de termino:
+        %td= f.datetime_select :end_at
+      %tr
+        %td{:colspan => '2'}= f.submit 'Guardar evento'

@@ -1,7 +1,7 @@
 Alzheimer::Application.routes.draw do
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   post '/calendar/new' => 'calendar#new', :as => :new_event
-  get '/calendar/create' => 'calendar#create', :as => :create_event
+  post '/calendar/create' => 'calendar#create', :as => :create_event
   get '/events/:id' => 'calendar#show', :as => :show_event
 
   devise_for :application_admin_users
