@@ -1,8 +1,12 @@
 %ul.nav
-  %li= link_to "Inicio", "/"
-  %li= link_to "Ejercicios", :exercises
-  %li= link_to "Eventos", :calendar
-  %li= link_to "Editar perfil", :edit_profile
+  %li{:class => set_nav_active(root_path)}
+    = link_to "Inicio", "/"
+  %li{:class => set_nav_active(exercises_path)}
+    = link_to "Ejercicios", :exercises
+  %li{:class => set_nav_active(calendar_path)}
+    = link_to "Eventos", :calendar
+  %li{:class => set_nav_active(edit_profile_path)}
+    = link_to "Editar perfil", :edit_profile
   - if user_signed_in?
     %li
       %p= current_user.email
