@@ -22,8 +22,9 @@
     %article
       #render_views
         = yield
-    #notify
-      #title_bar
-        #notify-icon
+    - if user_signed_in?
+      #notify
+        #title_bar
+          #notify-icon
     %footer(align = "center")
       %h3 &copy; WaveSystems 2012

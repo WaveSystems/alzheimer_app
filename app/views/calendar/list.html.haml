@@ -1,0 +1,20 @@
+%br
+%br
+%br
+%table.index_table
+  %thead 
+    %tr
+      %th 
+        %h3 Nombre
+      %th 
+        %h3 Descripción
+      %th
+  %tbody
+  - @events.each do |event|
+    %tr
+      %td
+        %h3= event.name
+      %td
+        %h3= event.description
+      %td
+        %h3= link_to "Ver mas", show_event_path(event.id)
