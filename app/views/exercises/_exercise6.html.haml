@@ -6,7 +6,7 @@
 #myCarousel.carousel.slide
   .carousel-inner
     %div{:class => "item active", :align => "center"}
-      %img{:src => "assets/memoria.jpg"}
+      %img{:src => "assets/Background2.jpg"}
     - @praxias.each do |praxia|
       %div{:class => "item", :align => "center"}
         = image_tag praxia.image.url(:medium)

@@ -1,4 +1,4 @@
-%h2 login
+%h2 Iniciar sesión
 = form_tag user_session_path do
   %table
     %tr
@@ -17,8 +17,8 @@
       %td
         %button Iniciar Sesión
     %tr
-      %td= link_to "Olvido su contraseña?", new_password_path('user')
+      %td= link_to "¿Olvido su contraseña?", new_password_path('user')
     %tr
-      %td= link_to "Registrese", new_user_registration_path
+      %td= link_to "Registrarse", new_user_registration_path
     %tr
-      %td= link_to "Eres administrador de un grupo de la 3a edad?", new_application_admin_user_session_path
+      %td= link_to "¿Eres administrador de un grupo de la 3a edad?", new_application_admin_user_session_path
