@@ -1,6 +1,6 @@
 %h2(align = "center") Responda a las siguientes preguntas
 
-%ul.thumbnails
+%ul#content.thumbnails
   - @gnosias.each do |gnosia|
     :javascript
       $(document).ready(function(){
@@ -36,3 +36,7 @@
           %tr
             %td{:colspan => "2"}
               %h2{:class => "answer#{gnosia.id}"}
+
+#page_navigation
+#show_per_page
+#current_page
