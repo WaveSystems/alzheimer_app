@@ -9,6 +9,7 @@
       %th 
         %h3 Descripción
       %th
+      %th
   %tbody
   - @events.each do |event|
     %tr
@@ -18,3 +19,5 @@
         %h3= event.description
       %td
         %h3= link_to "Ver mas", show_event_path(event.id)
+      %td
+        %h3= link_to "Terminar", finish_event_path(event.id) 

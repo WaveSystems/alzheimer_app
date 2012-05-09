@@ -16,7 +16,6 @@
 
 $(document).ready(function(){
   $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
-  setInterval(function(){
     $.ajax({ 
       url: '/calendar/notify',
       type: 'GET'
@@ -26,7 +25,6 @@ $(document).ready(function(){
       else
         $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
     });
-  },60000);
 });
 
 /* ===================================================

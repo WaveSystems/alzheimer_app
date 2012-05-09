@@ -5,6 +5,7 @@ Alzheimer::Application.routes.draw do
   get '/events/:id' => 'calendar#show', :as => :show_event
   get '/calendar/list' => 'calendar#list', :as => :list_events
   get '/calendar/notify' => 'calendar#event_now'
+  get '/calendar/finish/:id' => 'calendar#finish_event', :as => :finish_event
 
   devise_for :application_admin_users
 

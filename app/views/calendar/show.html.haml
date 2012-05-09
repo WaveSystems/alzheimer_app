@@ -10,9 +10,9 @@
       %td
         %h3 Fecha de inicio:
       %td
-        %h3= @event.start_at.to_s(:pretty)
+        %h3= "#{@event.start_at.day} de #{Event::MONTHS[@event.start_at.month - 1]} de #{@event.start_at.year}, a las #{@event.start_at.hour}:#{@event.start_at.min}"
     %tr
       %td
         %h3 Fecha de termino:
       %td
-        %h3= @event.end_at.to_s(:pretty)
+        %h3= "#{@event.end_at.day} de #{Event::MONTHS[@event.end_at.month - 1]} de #{@event.end_at.year}, a las #{@event.end_at.hour}:#{@event.end_at.min}"

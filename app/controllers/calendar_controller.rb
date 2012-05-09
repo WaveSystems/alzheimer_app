@@ -14,7 +14,7 @@ class CalendarController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(params[:event])
+    @event = current_user.events.build(params[:event].merge(:done => false))
     if @event.save
       flash[:notice] = "Evento guardado exitosamente"
       redirect_to :calendar
@@ -30,6 +30,17 @@ class CalendarController < ApplicationController
 
   def list
     @events = Event.today(current_user)
+  end
+
+  def finish_event
+    @event = Event.find(params[:id])
+    @event.done = true
+    if @event.save
+      flash[:notice] = "Tarea terminada"
+      redirect_to :calendar
+    else
+      flash[:alert] = "Ups... Algo salio mal..."
+    end
   end
 
   respond_to  :json
