@@ -9,9 +9,10 @@ module CalendarHelper
       :year => @year,
       :month => @month,
       :event_strips => @event_strips,
-      :month_name_text => I18n.localize(@shown_month, :format => "%B %Y"),
-      :previous_month_text => "<< " + month_link(@shown_month.prev_month),
-      :next_month_text => month_link(@shown_month.next_month) + " >>"    }
+      :month_name_text => "<div id = 'current-month'>" + I18n.localize(@shown_month, :format => "%B %Y") + "</div>",
+      :previous_month_text => "<div id = 'prev-month'> <<" + month_link(@shown_month.prev_month) + "</div>",
+      :next_month_text => "<div id = 'next-month'>" + month_link(@shown_month.next_month) + " >> </div>"
+    }
   end
 
   def event_calendar
