@@ -1,0 +1,14 @@
+:javascript
+  $(function(){
+    $('.carousel').carousel();
+  });
+
+#myCarousel.carousel.slide
+  .carousel-inner
+    %div{:class => "item active", :align => "center"}
+      %img{:src => "assets/memoria.jpg"}
+    - @languages.each do |language|
+      %div{:class => "item", :align => "center"}
+        = image_tag language.image.url(:medium)
+  %a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev")
+  %a(class = "right carousel-control" href = "#myCarousel" data-slide = "next")

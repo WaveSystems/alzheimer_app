@@ -19,6 +19,9 @@ Alzheimer::Application.routes.draw do
   post '/load_first' => 'page#load_first'
   post '/load_second' => 'page#load_second'
   post '/load_third' => 'page#load_third'
+  post '/load_fourth' => 'page#load_fourth'
+  post '/load_fifth' => 'page#load_fifth'
+  post '/load_sixth' => 'page#load_sixth'
 
   get '/question/:id' => 'questions#question'
   get '/gnosia/:id' => 'questions#gnosia'

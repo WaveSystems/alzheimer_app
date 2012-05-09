@@ -34,6 +34,18 @@ class PageController < ApplicationController
     @memorias = Memoria.all
   end
 
+  def load_fourth
+    @languages = Language.all
+  end
+
+  def load_fifth
+    @orientations = Orientation.all
+  end
+
+  def load_sixth
+    @praxias = Praxia.all
+  end
+
   private
   def check_application_admin_user!
     if application_admin_user_signed_in?
