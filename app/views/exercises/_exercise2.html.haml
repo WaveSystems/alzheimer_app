@@ -9,8 +9,9 @@
             url: 'gnosia/#{gnosia.id}',
             type: 'GET'
           }).done(function(answer){
-            console.log(answer);
-            if($('.input#{gnosia.id}').val() == answer.answer){
+            var answers = answer.answer;
+            console.log(answers);
+            if(answers.indexOf($('.input#{gnosia.id}').val()) != -1){
               $('.answer#{gnosia.id}').empty();
               $('.answer#{gnosia.id}').append('Correcto!');
             }else{

@@ -16,7 +16,9 @@
             url: 'question/#{question.id}',
             type: 'GET'
           }).done(function(answer){
-            if($('.input#{question.id}').val() == answer.answer){
+            var answers = answer.answer;
+            console.log(answers);
+            if(answers.indexOf($('.input#{question.id}').val()) != -1){
               $('.answer#{question.id}').empty();
               $('.answer#{question.id}').append('Correcto!');
             }else{

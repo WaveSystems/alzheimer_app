@@ -4,9 +4,8 @@
 en:
   hello: "Hola Mundo!"
   time:
-    formats:
-      default: "%A, %B %e a las %l:%M"
-    
+    default: "%e/%m/%Y" 
+  date:
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     abbr_day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
       
