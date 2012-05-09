@@ -27,4 +27,18 @@ class CalendarController < ApplicationController
   def show
     @event = Event.find(params[:id])
   end
+
+  def list
+    @events = Event.today(current_user)
+  end
+
+  respond_to  :json
+  def event_now
+    @events = Event.today(current_user)
+    @notification = false
+    unless @events.empty?
+      @notification = true
+    end
+    respond_with @notification
+  end
 end

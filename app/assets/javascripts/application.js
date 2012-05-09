@@ -14,6 +14,21 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).ready(function(){
+  $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
+  setInterval(function(){
+    $.ajax({ 
+      url: '/calendar/notify',
+      type: 'GET'
+    }).done(function(has_notifications){
+      if(has_notifications)
+        $('#notify-icon').html('<a href = "/calendar/list"><img src = "/assets/notify-on.png"></img></a>');
+      else
+        $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
+    });
+  },60000);
+});
+
 /* ===================================================
  * bootstrap-transition.js v2.0.2
  * http://twitter.github.com/bootstrap/javascript.html#transitions

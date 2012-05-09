@@ -3,6 +3,8 @@ Alzheimer::Application.routes.draw do
   post '/calendar/new' => 'calendar#new', :as => :new_event
   post '/calendar/create' => 'calendar#create', :as => :create_event
   get '/events/:id' => 'calendar#show', :as => :show_event
+  get '/calendar/list' => 'calendar#list', :as => :list_events
+  get '/calendar/notify' => 'calendar#event_now'
 
   devise_for :application_admin_users
 
