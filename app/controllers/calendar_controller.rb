@@ -29,7 +29,9 @@ class CalendarController < ApplicationController
   end
 
   def list
-    @events = Event.today(current_user)
+    if user_signed_in?
+      @events = Event.today(current_user)
+    end
   end
 
   def finish_event
@@ -45,11 +47,13 @@ class CalendarController < ApplicationController
 
   respond_to  :json
   def event_now
-    @events = Event.today(current_user)
-    @notification = false
-    unless @events.empty?
-      @notification = true
+    if user_signed_in?
+      @events = Event.today(current_user)
+      @notification = false
+      unless @events.empty?
+        @notification = true
+      end
+      respond_with @notification
     end
-    respond_with @notification
   end
 end

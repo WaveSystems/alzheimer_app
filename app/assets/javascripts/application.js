@@ -15,7 +15,8 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
+  if($('.log_in').val() != 'Sesion no iniciada') {
+    $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
     $.ajax({ 
       url: '/calendar/notify',
       type: 'GET'
@@ -25,6 +26,7 @@ $(document).ready(function(){
       else
         $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
     });
+  }
 });
 
 /* ===================================================
