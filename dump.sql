@@ -34,16 +34,22 @@ BEGIN TRANSACTION;
   CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "username" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "group_id" integer);
   INSERT INTO "users" VALUES(1,'flashdevlin@gmail.com','','$2a$10$Vx9lEjCUYGyybRKSd9THJOJUNfmEAIW0OXJlJUG57VKm0MEieW1.u',NULL,NULL,NULL,8,'2012-05-15 19:37:30.804227','2012-05-09 14:01:20.688785','127.0.0.1','127.0.0.1','2012-05-09 06:59:35.691492','2012-05-15 19:37:30.805707',NULL);
   INSERT INTO "users" VALUES(2,'noel@hotmail.com','','$2a$10$eYH5lwTKo.3oD38DNznME.feKLXgGf9CId2ySKRDJPoPQwxUi6Lky',NULL,NULL,NULL,1,'2012-05-09 14:55:39.160596','2012-05-09 14:55:39.160596','127.0.0.1','127.0.0.1','2012-05-09 14:55:39.049873','2012-05-09 14:55:39.161782',NULL);
+  INSERT INTO "users" VALUES(3,'cavjzz@gmail.com','','$2a$10$wLVyCjZwpqFCud8Nl1Vkt.KPv.RJehD4KguS0LUr4iqD2uadGXg6G',NULL,NULL,NULL,1,'2012-05-24 02:47:14.920410','2012-05-24 02:47:14.920410','127.0.0.1','127.0.0.1','2012-05-24 02:47:14.728425','2012-05-24 02:47:14.921729',NULL);
   CREATE TABLE "admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-  INSERT INTO "admin_users" VALUES(1,'admin@example.com','$2a$10$lrLP/V/nDf6IrIIkY.kX1Ovv3s1kvAvMjadt939W07AAhyfC/pWJq',NULL,NULL,NULL,3,'2012-05-09 09:09:30.310437','2012-05-09 08:12:16.629076','127.0.0.1','127.0.0.1','2012-05-09 06:50:39.387737','2012-05-09 09:09:30.311841');
+  INSERT INTO "admin_users" VALUES(1,'admin@example.com','$2a$10$lrLP/V/nDf6IrIIkY.kX1Ovv3s1kvAvMjadt939W07AAhyfC/pWJq',NULL,NULL,NULL,4,'2012-05-24 02:54:01.398065','2012-05-09 09:09:30.310437','127.0.0.1','127.0.0.1','2012-05-09 06:50:39.387737','2012-05-24 02:54:01.403756');
   CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar(255), "lastname" varchar(255), "birthdate" date, "street" varchar(255), "neighborhood" varchar(255), "zipcode" varchar(255), "country" varchar(255), "tutor_name" varchar(255), "ocupation" varchar(255), "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "city" varchar(255), "number" integer, "state" varchar(255));
   INSERT INTO "profiles" VALUES(1,'Jorge','Robles Grajeda','1990-05-17','Priv. Primo de verdad','Centro','28000','Mexico','Juan Antonio Chávez','Ing. Sistemas ','Nací el 17 de Mayo de 1990 en El Grullo, Jalisco, México. Próximamente actualizaré mi biografía, solo necesito recordarla.','2012-05-09 07:01:16.068489','2012-05-09 08:07:07.799442',1,'Colima',422,'Colima');
   INSERT INTO "profiles" VALUES(2,'Noel','Escobedo','1952-05-09','Cuauhtemoc','Centro','28000','Mexico','Damaso Lopez','Ingeniero en sistemas','ALgo','2012-05-09 14:57:28.698223','2012-05-09 14:57:28.698223',2,'Colima',15,'Colima');
+  INSERT INTO "profiles" VALUES(3,'Juan','Chavez','2012-05-23','Priv. Primo de Verdad','Centro','28000','Mexico','Juan Antonio Chavez','Ingeniero','asldkfjaskl;djf','2012-05-24 02:47:36.581365','2012-05-24 02:47:36.581365',3,'Colima',422,'Colima');
   CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
   CREATE TABLE "application_admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
   CREATE TABLE "organizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "descripcion" varchar(255), "address" varchar(255), "city" varchar(255), "county" varchar(255), "state" varchar(255), "country" varchar(255), "phone" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "application_admin_user_id" integer);
   CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question" varchar(255), "answer" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-  INSERT INTO "questions" VALUES(1,'Tienes 200 naranjas. Y debes repartirlas entre 20 personas. ¿Cuántas naranjas le tocan a cada persona?','10,diez,Diez','2012-05-09 07:09:11.456055','2012-05-09 07:09:30.626352');
+  INSERT INTO "questions" VALUES(1,'Tienes 200 naranjas. Y debes repartirlas entre 20 personas. ¿Cuántas naranjas le tocan a cada persona?','--- 
+    - "10"
+    - diez
+    - Diez
+    ','2012-05-09 07:09:11.456055','2012-05-24 02:55:53.665181');
   INSERT INTO "questions" VALUES(2,'Pilar tiene 53 años y Juan tiene 59 años. ¿Cuántos años tienen entre los dos?','---
     - ! ''["112"''
     - ! '' "112 años"]''
@@ -244,8 +250,8 @@ BEGIN TRANSACTION;
   DELETE FROM sqlite_sequence;
   INSERT INTO "sqlite_sequence" VALUES('admin_users',1);
   INSERT INTO "sqlite_sequence" VALUES('memoria',11);
-  INSERT INTO "sqlite_sequence" VALUES('users',2);
-  INSERT INTO "sqlite_sequence" VALUES('profiles',2);
+  INSERT INTO "sqlite_sequence" VALUES('users',3);
+  INSERT INTO "sqlite_sequence" VALUES('profiles',3);
   INSERT INTO "sqlite_sequence" VALUES('questions',12);
   INSERT INTO "sqlite_sequence" VALUES('gnosia',16);
   INSERT INTO "sqlite_sequence" VALUES('languages',25);
@@ -263,4 +269,3 @@ BEGIN TRANSACTION;
   CREATE UNIQUE INDEX "index_application_admin_users_on_email" ON "application_admin_users" ("email");
   CREATE UNIQUE INDEX "index_application_admin_users_on_reset_password_token" ON "application_admin_users" ("reset_password_token");
   COMMIT;
-
