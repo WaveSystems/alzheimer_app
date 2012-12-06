@@ -12,23 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require libs/event_calendar
 //= require libs/bootstrap
 //= require libs/active_admin
 //= require libs/underscore
 //= require libs/backbone
+//= require main
+//= require app/views/exercises
+//= require router
 
-$(document).ready(function(){
-  if($('.log_in').val() != 'Sesion no iniciada') {
-    $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
-    $.ajax({ 
-      url: '/calendar/notify',
-      type: 'GET'
-    }).done(function(has_notifications){
-      if(has_notifications)
-        $('#notify-icon').html('<a href = "/calendar/list"><img src = "/assets/notify-on.png"></img></a>');
-      else
-        $('#notify-icon').html('<img src = "/assets/notify-off.png"></img>');
-    });
-  }
+$(function(){
+  AA.Initialize();
 });
