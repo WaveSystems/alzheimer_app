@@ -1,29 +1,11 @@
-#ex(align = "center")
-  #ex-first
-    =form_tag '/load_first', :remote => true do
-      = button_to "Cálculo", "#", :class => "exercise1"
-
-  #ex-second
-    =form_tag '/load_second', :remote => true do
-      = button_to "Gnosias", "#", :class => "exercise2"
-
-  #ex-third
-    =form_tag '/load_third', :remote => true do
-      = button_to "Memoria", "#", :class => "exercise3"
-
-  #ex-fourth
-    =form_tag '/load_fourth', :remote => true do
-      = button_to "Lenguaje", "#", :class => "exercise4"
-
-  #ex-fifth
-    =form_tag '/load_fifth', :remote => true do
-      = button_to "Orientación", "#", :class => "exercise5"
-
-  #ex-sixth
-    =form_tag '/load_sixth', :remote => true do
-      = button_to "Praxias", "#", :class => "exercise6"
-
-%br
-%br
-
-#exercises
+.fn-exercises
+  %center
+    .btn-group
+      %a.btn Cálculo
+      %a.btn Gnosias
+      %a.btn Memoria
+      %a.btn Lenguaje
+      %a.btn Orientación
+      %a.btn Praxias
+  
+  #exercises
