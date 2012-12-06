@@ -16,7 +16,7 @@
 //= require libs/active_admin
 //= require libs/underscore
 //= require libs/backbone
-//= require main
+//= require preload
 //= require app/views/exercises
 //= require router
 
