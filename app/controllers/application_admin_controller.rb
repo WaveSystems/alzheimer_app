@@ -1,4 +1,5 @@
 class ApplicationAdminController < ActionController::Base
-  layout 'admin'
+  protect_from_forgery
   before_filter :authenticate_application_admin_user!
+  layout 'admin'
 end

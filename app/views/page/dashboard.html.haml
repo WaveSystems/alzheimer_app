@@ -1,20 +1,10 @@
--#= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css"
--#= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"
--#:javascript
-  -#$('document').ready(function(){
-    -#$('#date').datepicker();
-  -#});
-
--#%input{:classs => "input-small", :id => "date", :name => "date", :type => "text"}
-
-#index2
-  #reminiscence-logo2(align="center")
-    = image_tag("Reminiscence1.png")
-  #slogan2(align="center")
-    %h4 Recordando lo vivido.
-  #contend2
-    %br
-    %br
-    %p Reminiscense cuenta con una serie de ejercicios especialmente diseñados para ayudar en el retraso de enfermedades de deterioro cognitivo y mental como la enfermedad de Alzheimer y la demencia senil.
-    %p Ejercite su mente y reactive sus recuerdos, es momento de volver a vivir parte de su historia. Calendarice sus actividades diarias y utilice esta práctica herramienta para recordarlas. Recuerde jugando, y mantenga su mente trabajando para mejorar su salud física y emocional.
-    %p ¡Disfruta de Reminiscense!
+.reminiscence-logo{ align: "center" }
+  = image_tag("Reminiscence1.png")
+.slogan{ align: "center" }
+  %h4 Recordando lo vivido.
+.content
+  %br
+  %br
+  %p Reminiscence cuenta con una serie de ejercicios especialmente diseñados para ayudar en el retraso de enfermedades de deterioro cognitivo y mental como la enfermedad de Alzheimer y la demencia senil.
+  %p Ejercite su mente y reactive sus recuerdos, es momento de volver a vivir parte de su historia. Calendarice sus actividades diarias y utilice esta práctica herramienta para recordarlas. Recuerde jugando, y mantenga su mente trabajando para mejorar su salud física y emocional.
+  %p ¡Disfruta de Reminiscence!
