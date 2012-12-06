@@ -1,42 +1,44 @@
-%h2 Responda las siguientes preguntas
-%table.index_table
-  %thead
-    %tr
-      %th
-        %h3 Problema
-      %th 
-      %th
-      %th
-  %tbody
-  - @questions.each do |question|
-    :javascript
-      $(document).ready(function(){
-        $('.submit#{question.id}').click(function(){
-          $.ajax({
-            url: 'question/#{question.id}',
-            type: 'GET'
-          }).done(function(answer){
-            var answers = answer.answer;
-            console.log(answers);
-            if(answers.indexOf($('.input#{question.id}').val()) != -1){
-              $('.answer#{question.id}').empty();
-              $('.answer#{question.id}').append('Correcto!');
-            }else{
-              $('.answer#{question.id}').empty();
-              $('.answer#{question.id}').append('Incorrecto...');
-            }
-          });
-        });
-      });
-    %tr
-      %td
-        %h3
-          %b= question.question
-      %td
-        %input(class = "input#{question.id}" name = 'a[answer]' type = "text" placeholder = "Escribe tu respuesta aquí...")
-      %td
-        %span(class = "submit#{question.id}")
-          %a.btn.btn-inverse Verificar
-      %td
-        %h3
-          %b(class = "answer#{question.id}") No contestado
+%script.exercise-one{ type: 'text/template' }
+  %h2 Responda las siguientes preguntas
+  {{ message }}
+  -#%table.index_table
+    -#%thead
+      -#%tr
+        -#%th
+          -#%h3 Problema
+        -#%th 
+        -#%th
+        -#%th
+    -#%tbody
+    -#- @questions.each do |question|
+      -#:javascript
+        -#$(document).ready(function(){
+          -#$('.submit#{question.id}').click(function(){
+            -#$.ajax({
+              -#url: 'question/#{question.id}',
+              -#type: 'GET'
+            -#}).done(function(answer){
+              -#var answers = answer.answer;
+              -#console.log(answers);
+              -#if(answers.indexOf($('.input#{question.id}').val()) != -1){
+                -#$('.answer#{question.id}').empty();
+                -#$('.answer#{question.id}').append('Correcto!');
+              -#}else{
+                -#$('.answer#{question.id}').empty();
+                -#$('.answer#{question.id}').append('Incorrecto...');
+              -#}
+            -#});
+          -#});
+        -#});
+      -#%tr
+        -#%td
+          -#%h3
+            -#%b= question.question
+        -#%td
+          -#%input(class = "input#{question.id}" name = 'a[answer]' type = "text" placeholder = "Escribe tu respuesta aquí...")
+        -#%td
+          -#%span(class = "submit#{question.id}")
+            -#%a.btn.btn-inverse Verificar
+        -#%td
+          -#%h3
+            -#%b(class = "answer#{question.id}") No contestado

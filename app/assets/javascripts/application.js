@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require libs/mustache
 //= require libs/bootstrap
 //= require libs/active_admin
 //= require libs/underscore
