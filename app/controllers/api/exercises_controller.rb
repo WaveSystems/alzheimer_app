@@ -5,8 +5,8 @@ class Api::ExercisesController < ApplicationController
   end
 
   def gnosias
-    @gnosias = Question.all
-    render json: @gnosias
+    @gnosias = Gnosia.all
+    render_for_api :gnosias, json: @gnosias
   end
 
   def language
