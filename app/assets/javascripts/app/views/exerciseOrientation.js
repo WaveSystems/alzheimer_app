@@ -9,7 +9,8 @@ AA.Views.exerciseOrientation = Backbone.View.extend({
   },
 
   render: function(){
-    this.template = Mustache.to_html($('.fn-' + this.templateName).html(), { questions: this.collection.toJSON() });
+    this.template = Mustache.to_html($('.fn-' + this.templateName).html(), { orientations: this.collection.models[0].get('orientations') });
     $(this.el).html(this.template);
+    $('.carousel').carousel();
   }
 });

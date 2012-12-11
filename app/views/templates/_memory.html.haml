@@ -1,18 +1,13 @@
--#:javascript
-  -#$(function(){
-    -#$('.carousel').carousel();
-  -#});
-
 %script.fn-memory{ type: 'text/template' }
   %h2 Responda las siguientes preguntas
-  {{ message }}
 
--##myCarousel.carousel.slide
-  -#.carousel-inner
-    -#%div{:class => "item active", :align => "center"}
-      -#%img{:src => "assets/Background2.jpg"}
-    -#- @memorias.each do |memoria|
-      -#%div{:class => "item", :align => "center"}
-        -#= image_tag memoria.image.url(:medium)
-  -#%a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev")
-  -#%a(class = "right carousel-control" href = "#myCarousel" data-slide = "next")
+  #myCarousel.carousel.slide
+    .carousel-inner
+      %div{ class: "item active", align: "center" }
+        %img{:src => "assets/Background2.jpg"}
+      {{ #memories }}
+      %div{ class: "item", align: "center"}
+        %img{ src: "{{ image_path }}" }
+      {{ /memories }}
+    %a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev") ‹
+    %a(class = "right carousel-control" href = "#myCarousel" data-slide = "next") ›

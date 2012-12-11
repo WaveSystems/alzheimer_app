@@ -10,22 +10,22 @@ class Api::ExercisesController < ApplicationController
   end
 
   def language
-    @language = Question.all
-    render json: @language
+    @language = Language.all
+    render_for_api :language, json: @language
   end
 
   def memory
-    @memory = Question.all
-    render json: @memory
+    @memories = Memoria.all
+    render_for_api :memory, json: @memories
   end
 
   def orientation
-    @orientation = Question.all
-    render json: @orientation
+    @orientation = Orientation.all
+    render_for_api :orientation, json: @orientation
   end
 
   def praxias
-    @praxias = Question.all
-    render json: @praxias
+    @praxias = Praxia.all
+    render_for_api :praxia, json: @praxias
   end
 end

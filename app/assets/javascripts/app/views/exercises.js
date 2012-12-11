@@ -22,10 +22,10 @@ AA.Views.exercises = Backbone.View.extend({
         exerciseItem = new AA.Views.exerciseGnosias();
         break;
       case "btn fn-category memory active":
-        exerciseItem = new AA.Views.exerciseLanguage();
+        exerciseItem = new AA.Views.exerciseMemory();
         break;
       case "btn fn-category language active":
-        exerciseItem = new AA.Views.exerciseMemory();
+        exerciseItem = new AA.Views.exerciseLanguage();
         break;
       case "btn fn-category orientation active":
         exerciseItem = new AA.Views.exerciseOrientation();
