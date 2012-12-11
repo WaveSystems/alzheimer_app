@@ -1,12 +1,15 @@
-= render partial: 'exercises/exercise1'
-.fn-exercises
-  %center
-    .btn-group
-      %a.btn.fn-category Cálculo
-      %a.btn.fn-category Gnosias
-      %a.btn.fn-category Memoria
-      %a.btn.fn-category Lenguaje
-      %a.btn.fn-category Orientación
-      %a.btn.fn-category Praxias
-  
-  .exercises
+= render partial: 'templates/calculus'
+= render partial: 'templates/gnosias'
+= render partial: 'templates/language'
+= render partial: 'templates/memory'
+= render partial: 'templates/orientation'
+= render partial: 'templates/praxias'
+%center
+  .btn-group.fn-exercises
+    %a.btn.fn-category.calculus Cálculo
+    %a.btn.fn-category.gnosias Gnosias
+    %a.btn.fn-category.memory Memoria
+    %a.btn.fn-category.language Lenguaje
+    %a.btn.fn-category.orientation Orientación
+    %a.btn.fn-category.praxias Praxias
+  .fn-render-exercise-templates

@@ -19,6 +19,7 @@
 //= require libs/backbone
 //= require preload
 //= require app/views/exercises
+//= require app/views/exerciseItem
 //= require router
 
 $(function(){

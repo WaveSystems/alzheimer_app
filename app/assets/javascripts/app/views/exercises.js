@@ -2,16 +2,33 @@ AA.Views.exercises = Backbone.View.extend({
   el: '.fn-exercises',
 
   events: {
-    'click .fn-category' : 'renderCategory'
+    'click .fn-category' : 'changeButtonClass'
   },
 
-  initialize: function(){
-    this.template = Mustache.to_html($('.exercise-one').html(), { message: 'Hello from mustache templates' });
-  },
-
-  renderCategory: function(e){
+  changeButtonClass: function(e){
+    var currentTarget = $(e.target);
     $('.fn-category').removeClass('active');
-    $(e.target).addClass('active');
-    $('.exercises').html(this.template);
+    currentTarget.addClass('active');
+    this.renderExerciseItem(currentTarget.attr('class'));
+  },
+
+  renderExerciseItem: function(className){
+    switch (className) {
+      case "btn fn-category calculus active":
+
+        break;
+      case "btn fn-category gnosias active":
+        break;
+      case "btn fn-category memory active":
+        break;
+      case "btn fn-category language active":
+        break;
+      case "btn fn-category orientation active":
+        break;
+      case "btn fn-category praxias active":
+        break;
+      default:
+        break;
+    }
   }
 });

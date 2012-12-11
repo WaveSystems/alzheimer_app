@@ -1,0 +1,18 @@
+-#:javascript
+  -#$(function(){
+    -#$('.carousel').carousel();
+  -#});
+
+%script.fn-praxias{ type: 'text/template' }
+  %h2 Responda las siguientes preguntas
+  {{ message }}
+
+-##myCarousel.carousel.slide
+  -#.carousel-inner
+    -#%div{:class => "item active", :align => "center"}
+      -#%img{:src => "assets/Background2.jpg"}
+    -#- @praxias.each do |praxia|
+      -#%div{:class => "item", :align => "center"}
+        -#= image_tag praxia.image.url(:medium)
+  -#%a(class = "left carousel-control" href = "#myCarousel" data-slide = "prev")
+  -#%a(class = "right carousel-control" href = "#myCarousel" data-slide = "next")
