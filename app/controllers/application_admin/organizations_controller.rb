@@ -1,5 +1,4 @@
-class ApplicationAdmin::OrganizationsController < ApplicationController
-  before_filter :authenticate_application_admin_user!
+class ApplicationAdmin::OrganizationsController < ApplicationAdminController
 
   def index
     begin

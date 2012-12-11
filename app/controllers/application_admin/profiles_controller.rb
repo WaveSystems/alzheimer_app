@@ -1,5 +1,4 @@
-class ApplicationAdmin::ProfilesController < ApplicationController
-  before_filter :authenticate_application_admin_user!
+class ApplicationAdmin::ProfilesController < ApplicationAdminController
 
   def new
     if User.find(params[:user_id]).profile.nil?
@@ -21,23 +20,4 @@ class ApplicationAdmin::ProfilesController < ApplicationController
     end
   end
 
-  #def edit
-    #begin
-      #@profile = Profile.find(current_user.id)
-    #rescue Exception => e
-      #flash[:alert] = "Este usuario aun no tiene perfil para editar"
-      #redirect_to :new_profile
-    #end
-  #end
-
-  #def update
-    #@profile = Profile.find(current_user.id)
-    #if @profile.update_attributes(params[:profile])
-      #flash[:notice]="El perfil se ha actualizado correctamente"
-      #redirect_to :dashboard
-    #else
-      #flash[:alert]="Error al actualizar intente de nuevo..."
-      #redirect_to :new_profile
-    #end
-  #end
 end

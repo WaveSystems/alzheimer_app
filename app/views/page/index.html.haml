@@ -1,14 +1,13 @@
-#index
-  #devise_login.well
-    -unless user_signed_in?
-      = render "layouts/sign_in"
-  #reminiscence-logo(align="center")
-    = image_tag("Reminiscence1.png")
-  #slogan(align="center")
-    %h4 Recordando lo vivido.
-  #contend
-    %br
-    %br
-    %p Reminiscense cuenta con una serie de ejercicios especialmente diseñados para ayudar en el retraso de enfermedades de deterioro cognitivo y mental como la enfermedad de Alzheimer y la demencia senil.
-    %p Ejercite su mente y reactive sus recuerdos, es momento de volver a vivir parte de su historia. Calendarice sus actividades diarias y utilice esta práctica herramienta para recordarlas. Recuerde jugando, y mantenga su mente trabajando para mejorar su salud física y emocional.
-    %p Solo registrate en Reminiscense y comienza a recordar lo vivido.
+.devise-login.well
+  -unless user_signed_in?
+    = render "layouts/sign_in"
+.reminiscence-logo{ align: "center" } 
+  = image_tag "Reminiscence1.png"
+.slogan{ align: "center" }
+  %h4 Recordando lo vivido.
+.content
+  %br
+  %br
+  %p Reminiscence cuenta con una serie de ejercicios especialmente diseñados para ayudar en el retraso de enfermedades de deterioro cognitivo y mental como la enfermedad de Alzheimer y la demencia senil.
+  %p Ejercite su mente y reactive sus recuerdos, es momento de volver a vivir parte de su historia. Calendarice sus actividades diarias y utilice esta práctica herramienta para recordarlas. Recuerde jugando, y mantenga su mente trabajando para mejorar su salud física y emocional.
+  %p Solo registrate en Reminiscence y comienza a recordar lo vivido.

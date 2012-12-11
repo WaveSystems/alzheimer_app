@@ -1,0 +1,22 @@
+%script.fn-gnosias{ type: 'text/template' }
+  %h2(align = "center") Responda a las siguientes preguntas
+
+  %ul#content.thumbnails
+    {{ #gnosias }}
+    %li.span3
+      .thumbnail
+        %img{ src: "{{ image_path }}", class: "img-rounded" }
+        %table
+          %tr
+            %td{ colspan: "2" }
+              %p {{ question }}
+          %tr
+            %td
+              %input{ type: "text", class: "input-small input{{ id }}" }
+            %td
+              %a{ class: "btn btn-inverse submit{{ id }}"} Enviar
+          %tr
+            %td{ colspan: "2"}
+              %h2{ class: "answer{{ id }}" }
+
+    {{ /gnosias }}

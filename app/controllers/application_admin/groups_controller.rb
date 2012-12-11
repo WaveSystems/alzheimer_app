@@ -1,5 +1,4 @@
-class ApplicationAdmin::GroupsController < ApplicationController
-  before_filter :authenticate_application_admin_user!
+class ApplicationAdmin::GroupsController < ApplicationAdminController
   
   def dashboard
     @group = Group.find(params[:id])

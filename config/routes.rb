@@ -32,6 +32,19 @@ Alzheimer::Application.routes.draw do
   get '/edit_profile' => 'profiles#edit', :as => :edit_profile
   post ':id/update_profile' => 'profiles#update'
 
+  namespace :api do
+    resources :exercises, only: [:index] do
+      collection do
+        get :calculus
+        get :gnosias
+        get :language
+        get :memory
+        get :orientation
+        get :praxias
+      end
+    end
+  end
+
   namespace :application_admin do
     resources :organizations, :only => :index do
       get '/dashboard' => 'organizations#dashboard', :on => :member

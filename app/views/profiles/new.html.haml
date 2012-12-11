@@ -1,49 +1,50 @@
-%div.main_content
+%center
+  %h3.page-header Nuevo perfil
   = form_for @profile, :url => "/create_profile", :method => "post" do |f|
-    %table.index_table
+    %table.profile-table
       %tbody
         %tr
-          %td( width = "150px")= f.label "Nombre(s):"
-          %td= f.text_field :firstname
+          %td( width = "230px")= f.label "Nombre(s):"
+          %td= f.text_field :firstname, class: "profile-form"
         %tr
           %td= f.label "Apellidos:"
-          %td= f.text_field :lastname
+          %td= f.text_field :lastname, class: "profile-form"
         %tr
           %td= f.label "Fecha de nacimiento:"
-          %td= f.date_select :birthdate, :start_year => 1900
+          %td= f.date_select :birthdate, start_year: 1900, end_year: Time.now.year - 30
         %tr
           %th( colspan = "2" ) Dirección
         %tr
           %td= f.label "Calle"
-          %td= f.text_field :street
+          %td= f.text_field :street, class: "profile-form"
         %tr
           %td= f.label "Número:"
-          %td= f.text_field :number
+          %td= f.text_field :number, class: "profile-form"
         %tr
           %td= f.label "Colonia:"
-          %td= f.text_field :neighborhood
+          %td= f.text_field :neighborhood, class: "profile-form"
         %tr
           %td= f.label "Código postal:"
-          %td= f.text_field :zipcode
+          %td= f.text_field :zipcode, class: "profile-form"
         %tr
           %td= f.label "Ciudad"
-          %td= f.text_field :city
+          %td= f.text_field :city, class: "profile-form"
         %tr
           %td= f.label "Estado:"
-          %td= f.text_field :state
+          %td= f.text_field :state, class: "profile-form"
         %tr
           %td= f.label "País:"
           %td= f.country_select :country
         %tr
-          %th( colspan = "2" ) Información personal
+          %th{ colspan: "2" } Información personal
         %tr
           %td= f.label "Nombre del tutor:"
-          %td= f.text_field :tutor_name
+          %td= f.text_field :tutor_name, class: "profile-form"
         %tr
           %td= f.label "Ocupación del paciente:"
-          %td= f.text_field :ocupation
+          %td= f.text_field :ocupation, class: "profile-form"
         %tr
           %td= f.label "Biografía:"
-          %td= f.text_area :bio
+          %td= f.text_area :bio, class: "profile-form"
         %td
-          %td( colspan = "2" )= f.submit "Guardar perfil"
+          %td( colspan = "2" )= f.submit "Guardar perfil", class: 'btn btn-inverse'

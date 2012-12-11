@@ -1,15 +1,15 @@
-%ul.nav
-  %li{:class => set_nav_active(root_path)}
-    = link_to "Inicio", "/"
-  %li{:class => set_nav_active(exercises_path)}
-    = link_to "Ejercicios", :exercises
-  %li{:class => set_nav_active(calendar_path)}
-    = link_to "Eventos", :calendar
-  %li{:class => set_nav_active(edit_profile_path)}
-    = link_to "Editar perfil", :edit_profile
-  - if user_signed_in?
-    %li
-      %p= current_user.email
-    %li= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
-  - else
-    %li= link_to "Iniciar sesión", new_user_session_path
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand Reminiscence
+      %ul.nav
+        %li{:class => set_nav_active(root_path)}= link_to "Inicio", "/"
+        - if user_signed_in?
+          %li{:class => set_nav_active(exercises_path)}= link_to "Ejercicios", :exercises
+          %li{:class => set_nav_active(calendar_path)}= link_to "Eventos", :calendar
+          %li{:class => set_nav_active(edit_profile_path)}= link_to "Editar perfil", :edit_profile
+          %li
+            %a= current_user.email
+          %li= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+        - else
+          %li= link_to "Iniciar sesión", new_user_session_path

@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :check_application_admin_user!
-  before_filter :authenticate_user!
+  skip_before_filter :verify_profile, only: [:new, :create]
 
   def new
     if current_user.profile.nil?
@@ -42,11 +41,4 @@ class ProfilesController < ApplicationController
     end
   end
 
-  private
-  def check_application_admin_user!
-    if application_admin_user_signed_in?
-      flash[:alert]="Operacion no permitida!"
-      redirect_to '/application_admin/organizations'
-    end
-  end
 end
