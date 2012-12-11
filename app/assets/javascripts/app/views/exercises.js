@@ -16,24 +16,22 @@ AA.Views.exercises = Backbone.View.extend({
     var exerciseItem;
     switch (className) {
       case "btn fn-category calculus active":
-        exerciseItem = new AA.Views.exerciseItem('calculus');
+        exerciseItem = new AA.Views.exerciseCalculus();
         break;
       case "btn fn-category gnosias active":
-        exerciseItem = new AA.Views.exerciseItem('gnosias');
+        exerciseItem = new AA.Views.exerciseGnosias();
         break;
       case "btn fn-category memory active":
-        exerciseItem = new AA.Views.exerciseItem('memory');
+        exerciseItem = new AA.Views.exerciseLanguage();
         break;
       case "btn fn-category language active":
-        exerciseItem = new AA.Views.exerciseItem('language');
+        exerciseItem = new AA.Views.exerciseMemory();
         break;
       case "btn fn-category orientation active":
-        exerciseItem = new AA.Views.exerciseItem('orientation');
+        exerciseItem = new AA.Views.exerciseOrientation();
         break;
       case "btn fn-category praxias active":
-        exerciseItem = new AA.Views.exerciseItem('praxias');
-        break;
-      default:
+        exerciseItem = new AA.Views.exercisePraxias();
         break;
     }
   }

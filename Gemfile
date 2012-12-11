@@ -11,6 +11,7 @@ gem 'kaminari'
 gem 'paperclip'
 gem 'event-calendar', require: 'event_calendar'
 gem 'pry'
+gem 'acts_as_api'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
