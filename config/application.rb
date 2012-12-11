@@ -23,7 +23,7 @@ module Alzheimer
 
     config.to_prepare do
       Devise::SessionsController.skip_before_filter :verify_profile
-      Devise::Registrations.skip_before_filter :verify_profile
+      Devise::RegistrationsController.skip_before_filter :verify_profile
     end
   end
 end

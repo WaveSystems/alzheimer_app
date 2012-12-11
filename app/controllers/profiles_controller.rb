@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  skip_before_filter :verify_profile, only: [:new, :create]
+
   def new
     if current_user.profile.nil?
       @profile = Profile.new
