@@ -11,7 +11,7 @@
           %td= f.text_field :lastname, class: "profile-form"
         %tr
           %td= f.label "Fecha de nacimiento:"
-          %td= f.date_select :birthdate, :start_year => 1900
+          %td= f.date_select :birthdate, start_year: 1900, end_year: Time.now.year - 30
         %tr
           %th( colspan = "2" ) Dirección
         %tr
@@ -47,4 +47,4 @@
           %td= f.label "Biografía:"
           %td= f.text_area :bio, class: "profile-form"
         %td
-          %td( colspan = "2" )= f.submit "Guardar perfil"
+          %td( colspan = "2" )= f.submit "Guardar perfil", class: 'btn btn-inverse'
