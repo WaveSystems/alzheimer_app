@@ -1,44 +1,25 @@
 %script.fn-gnosias{ type: 'text/template' }
   %h2(align = "center") Responda a las siguientes preguntas
 
-  {{ message }}
-  -#%ul#content.thumbnails
-    -#- @gnosias.each do |gnosia|
-      -#:javascript
-        -#$(document).ready(function(){
-          -#$('.btn.btn-inverse.submit#{gnosia.id}').click(function(){
-            -#$.ajax({
-              -#url: 'gnosia/#{gnosia.id}',
-              -#type: 'GET'
-            -#}).done(function(answer){
-              -#var answers = answer.answer;
-              -#console.log(answers);
-              -#if(answers.indexOf($('.input#{gnosia.id}').val()) != -1){
-                -#$('.answer#{gnosia.id}').empty();
-                -#$('.answer#{gnosia.id}').append('Correcto!');
-              -#}else{
-                -#$('.answer#{gnosia.id}').empty();
-                -#$('.answer#{gnosia.id}').append('Incorrecto...');
-              -#}
-            -#});
-          -#});
-        -#});
-      -#%li.span3
-        -#.thumbnail
-          -#= image_tag gnosia.image.url(:medium)
-          -#%table
-            -#%tr
-              -#%td(colspan = "2")
-                -#%p= gnosia.question
-            -#%tr
-              -#%td
-                -#%input{:type => "text", :class => "input-small input#{gnosia.id}"}
-              -#%td
-                -#%a{:class => "btn btn-inverse submit#{gnosia.id}"} Verificar
-            -#%tr
-              -#%td{:colspan => "2"}
-                -#%h2{:class => "answer#{gnosia.id}"}
+  %ul#content.thumbnails
+    {{ #gnosias }}
+    %li.span3
+      .thumbnail
+        %img{ src: "{{ image_path }}", class: "img-rounded" }
+        %table
+          %tr
+            %td{ colspan: "2" }
+              %p {{ question }}
+          %tr
+            %td
+              %input{ type: "text", class: "input-small input{{ id }}" }
+            %td
+              %a{ class: "btn btn-inverse submit{{ id }}"} Enviar
+          %tr
+            %td{ colspan: "2"}
+              %h2{ class: "answer{{ id }}" }
 
-  -##page_navigation
-  -##show_per_page
-  -##current_page
+    {{ /gnosias }}
+  #page_navigation
+  #show_per_page
+  #current_page
