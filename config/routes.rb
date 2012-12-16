@@ -16,14 +16,6 @@ Alzheimer::Application.routes.draw do
   devise_for :user, :path_names => { :sign_up => "register" } 
   root :to => 'page#index'
   get '/dashboard' => 'page#dashboard', :as => :dashboard
-  get '/exercises' => 'page#exercises', :as => :exercises
-  post '/load_first' => 'page#load_first'
-  post '/load_second' => 'page#load_second'
-  post '/load_third' => 'page#load_third'
-  post '/load_fourth' => 'page#load_fourth'
-  post '/load_fifth' => 'page#load_fifth'
-  post '/load_sixth' => 'page#load_sixth'
-
   get '/question/:id' => 'questions#question'
   get '/gnosia/:id' => 'questions#gnosia'
 
@@ -31,6 +23,17 @@ Alzheimer::Application.routes.draw do
   post '/create_profile' => 'profiles#create'
   get '/edit_profile' => 'profiles#edit', :as => :edit_profile
   post ':id/update_profile' => 'profiles#update'
+
+  resources :exercises, only: [:index] do
+    collection do
+      get :calculus
+      get :gnosias
+      get :language
+      get :memory
+      get :orientation
+      get :praxias
+    end
+  end
 
   namespace :api do
     resources :exercises, only: [:index] do
