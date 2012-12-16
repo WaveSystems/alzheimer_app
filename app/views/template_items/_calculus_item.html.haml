@@ -1,5 +1,5 @@
 %script.fn-item-calculus-template{ type: 'text/template' }
-  %tr{ class: "fn-item-calculus" }
+  %tr{ class: "fn-item-calculus-{{question.id}}" }
     %td {{ question.question }}
     %td
       %input{ class: "fn-answer", name: 'a[answer]', type: "text", placeholder: "Escribe tu respuesta aquí" }

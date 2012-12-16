@@ -1,6 +1,4 @@
 AA.Views.exerciseCalculusItem = Backbone.View.extend({
-  el: ".fn-item-calculus",
-
   events: {
     'click .fn-send'    : 'hideAndScore',
     'keypress .fn-answer' : 'hideAndScore'
@@ -8,8 +6,9 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
 
   hideAndScore: function(e){
     if (e.keyCode == 13 || e.type == "click"){
-      var answer = $('.fn-answer').val();
-      $('.fn-answer').val('');
+      var answer = this.$el.find('.fn-answer').val();
+      console.log(answer);
+      this.$el.find('.fn-answer').val('');
     }
   }
 
