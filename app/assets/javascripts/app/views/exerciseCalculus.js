@@ -10,16 +10,16 @@ AA.Views.exerciseCalculus = Backbone.View.extend({
   },
 
   render: function(){
-    this.template = Mustache.to_html($('.fn-' + this.templateName).html());
-    $(this.el).html(this.template);
+    this.questions = this.collection.toJSON();
+    $(this.el).html(Mustache.to_html($('.fn-' + this.templateName).html(), { length: this.questions.length }));
     this.renderItems();
+    
   },
 
   renderItems: function(){
     var self = this;
-    _.each(this.collection.toJSON(), function(question){
-      var templateItem = Mustache.to_html($('.fn-' + self.templateItemName).html(), {question: question});
-      $('.fn-body-table').append(templateItem);
+    _.each(this.questions, function(question){
+      $('.fn-body-table').append(Mustache.to_html($('.fn-' + self.templateItemName).html(), {question: question}));
       exerciseItem = new AA.Views.exerciseCalculusItem({ el: ".fn-item-calculus-" + question.id });
     });
     $('.fn-answer')[0].focus();
