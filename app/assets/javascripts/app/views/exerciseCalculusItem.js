@@ -10,9 +10,12 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
   },
   
   hideAndScore: function(e){
+    var nextElement = $('.fn-answer')[this.questionId];
     if (e.keyCode == 13 || e.type == "click"){
       this.$el.hide(true);
-      $('.fn-answer')[this.questionId].focus();
+      if ( nextElement != undefined ) {
+        nextElement.focus();
+      }
       this.evaluate();
     }
   }, 
@@ -22,12 +25,25 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
         answer = this.$el.find('.fn-answer').val(),
         questionsNumber = parseInt($('.fn-questions-number').val()),
         correctAnswersNumber = parseInt($('.fn-correct-answers-number').val()),
-        answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val());
+        answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val()),
+        evaluatedAnswer = _.find(correctAnswers, function(correctAnswer){ return correctAnswer == answer });
 
     this.$el.find('.fn-answer').val('');
 
-    if (answeredQuestionsNumber == questionsNumber){
+    if ( evaluatedAnswer != undefined ) {
+      correctAnswersNumber++;
+      $('.fn-correct-answers-number').val(correctAnswersNumber);
+    }
 
+    answeredQuestionsNumber++;
+    $('.fn-answered-questions-number').val(answeredQuestionsNumber);
+
+    console.log("Respuestas correctas: " + correctAnswersNumber);
+    console.log("Preguntas contestadas: " + answeredQuestionsNumber);
+    console.log("---------------------------------");
+
+    if (answeredQuestionsNumber == questionsNumber){
+      $('.fn-finished-questions').modal('show');
     }
   }
 });
