@@ -7,31 +7,29 @@ AA.Views.exercises = Backbone.View.extend({
 
   changeButtonClass: function(e){
     var currentTarget = $(e.target);
-    $('.fn-category').removeClass('active');
-    currentTarget.addClass('active');
     this.renderExerciseItem(currentTarget.attr('class'));
   },
 
   renderExerciseItem: function(className){
     var exerciseItem;
     switch (className) {
-      case "btn fn-category calculus active":
-        exerciseItem = new AA.Views.exerciseCalculus();
+      case "btn fn-category calculus":
+        AA.router.navigate('exercises/calculus', true);
         break;
-      case "btn fn-category gnosias active":
-        exerciseItem = new AA.Views.exerciseGnosias();
+      case "btn fn-category gnosias":
+        AA.router.navigate('exercises/gnosias', true);
         break;
-      case "btn fn-category memory active":
-        exerciseItem = new AA.Views.exerciseMemory();
+      case "btn fn-category memory":
+        AA.router.navigate('exercises/memory', true);
         break;
-      case "btn fn-category language active":
-        exerciseItem = new AA.Views.exerciseLanguage();
+      case "btn fn-category language":
+        AA.router.navigate('exercises/language', true);
         break;
-      case "btn fn-category orientation active":
-        exerciseItem = new AA.Views.exerciseOrientation();
+      case "btn fn-category orientation":
+        AA.router.navigate('exercises/orientation', true);
         break;
-      case "btn fn-category praxias active":
-        exerciseItem = new AA.Views.exercisePraxias();
+      case "btn fn-category praxias":
+        AA.router.navigate('exercises/praxias', true);
         break;
     }
   }
