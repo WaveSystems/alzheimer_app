@@ -38,12 +38,11 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
     answeredQuestionsNumber++;
     $('.fn-answered-questions-number').val(answeredQuestionsNumber);
 
-    console.log("Respuestas correctas: " + correctAnswersNumber);
-    console.log("Preguntas contestadas: " + answeredQuestionsNumber);
-    console.log("---------------------------------");
-
     if (answeredQuestionsNumber == questionsNumber){
       $('.fn-finished-questions').modal('show');
+      incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
+      $('.fn-correct-answers-count').html("<p> Respuestas correctas: " + correctAnswersNumber + "</p>");
+      $('.fn-incorrect-answers-count').html("<p> Respuestas incorrectas: " + incorrectAnswersNumber + "</p>");
     }
   }
 });
