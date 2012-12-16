@@ -1,0 +1,12 @@
+%script.fn-gnosia-item-template{ type: 'text/template' }
+  %li.span3
+    %div{ class: 'fn-item-gnosia-{{ gnosia.id }} thumbnail' }
+      %input{ type: 'hidden', class: "fn-this-id", value: "{{ gnosia.id }}" }
+      %img{ src: "{{ gnosia.image_path }}", class: "img-rounded" } 
+      %p {{ gnosia.question }}
+      %form
+        {{ #gnosia.answer }}
+        %span.radio-answer
+        %input{ type: 'radio', name: "answer", value: "{{ . }}" } {{ . }}
+        {{ /gnosia.answer }}
+      %a{ class: "btn btn-inverse submit{{ gnosia.id }}"} Enviar

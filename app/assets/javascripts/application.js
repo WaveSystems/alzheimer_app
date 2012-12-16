@@ -16,6 +16,7 @@
 //= require app/views/exerciseCalculus
 //= require app/views/exerciseCalculusItem
 //= require app/views/exerciseGnosias
+//= require app/views/exerciseGnosiaItem
 //= require app/views/exerciseLanguage
 //= require app/views/exerciseMemory
 //= require app/views/exerciseOrientation
