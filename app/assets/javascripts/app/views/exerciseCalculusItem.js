@@ -11,11 +11,23 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
   
   hideAndScore: function(e){
     if (e.keyCode == 13 || e.type == "click"){
-      var answer = this.$el.find('.fn-answer').val();
-      this.$el.find('.fn-answer').val('');
       this.$el.hide(true);
       $('.fn-answer')[this.questionId].focus();
+      this.evaluate();
+    }
+  }, 
+  
+  evaluate: function(){
+    var correctAnswers = this.$el.find('.fn-correct-answer').val().split(","),
+        answer = this.$el.find('.fn-answer').val(),
+        questionsNumber = parseInt($('.fn-questions-number').val()),
+        correctAnswersNumber = parseInt($('.fn-correct-answers-number').val()),
+        answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val());
+
+    this.$el.find('.fn-answer').val('');
+
+    if (answeredQuestionsNumber == questionsNumber){
+
     }
   }
-
 });
