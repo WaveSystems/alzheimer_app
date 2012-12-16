@@ -11,6 +11,7 @@ class Gnosia < ActiveRecord::Base
     t.add :name
     t.add :question
     t.add :answer
+    t.add :wrong_answer
     t.add :image_path
   end
   

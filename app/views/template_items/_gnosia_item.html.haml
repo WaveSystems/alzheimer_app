@@ -10,4 +10,9 @@
           %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ . }}" }
           {{ . }}
         {{ /gnosia.answer }}
+        {{ #gnosia.wrong_answer }}
+        %label.radio
+          %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ . }}" }
+          {{ . }}
+        {{ /gnosia.wrong_answer }}
         %input.fn-correct-answer{ type: 'hidden', class: "fn-selected-answer", value: "{{ gnosia.answer }}" }
