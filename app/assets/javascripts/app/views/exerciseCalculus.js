@@ -19,7 +19,7 @@ AA.Views.exerciseCalculus = Backbone.View.extend({
   renderItems: function(){
     var self = this;
     _.each(this.questions, function(question){
-      $('.fn-body-table').append(Mustache.to_html($('.fn-' + self.templateItemName).html(), {question: question}));
+      $('.fn-body-table').append(Mustache.to_html($('.fn-' + self.templateItemName).html(), { question: question }));
       exerciseItem = new AA.Views.exerciseCalculusItem({ el: ".fn-item-calculus-" + question.id });
     });
     $('.fn-answer')[0].focus();

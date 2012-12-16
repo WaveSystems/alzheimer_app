@@ -9,7 +9,7 @@ ActiveAdmin.register Praxia do
   end
 
   index :as => :grid do |praxia|
-    link_to(image_tag(praxia.image.url(:medium)))
+    link_to(image_tag(praxia.image.url(:medium)), admin_praxium_path(praxia))
   end
   
 end
