@@ -9,8 +9,8 @@ AA.Views.exerciseLanguage = Backbone.View.extend({
   },
 
   render: function(){
-    this.template = Mustache.to_html($('.fn-' + this.templateName).html(), { languages: this.collection.models[0].get('languages') });
-    $(this.el).html(this.template);
+    this.languageItems = _.flatten(this.collection.toJSON()[0]);
+    $(this.el).html(Mustache.to_html($('.fn-carrousel').html(), { message: "Responda las siguientes preguntas" , items: this.languageItems }));
     $('.carousel').carousel();
   }
 });

@@ -1,0 +1,9 @@
+#myCarousel.carousel.slide
+  .carousel-inner
+    %div{ class: "item active", align: "center" }
+      %img{:src => "/assets/Background2.jpg"}
+    {{ #items }}
+    %div{ class: "item", align: "center"}
+      %img{ src: "{{ image_path }}" }
+    {{ /items }}
+  %a(class = "right carousel-control" href = "#myCarousel" data-slide = "next") ›

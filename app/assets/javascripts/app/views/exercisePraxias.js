@@ -9,8 +9,8 @@ AA.Views.exercisePraxias = Backbone.View.extend({
   },
 
   render: function(){
-    this.template = Mustache.to_html($('.fn-' + this.templateName).html(), { praxias: this.collection.models[0].get('praxia') });
-    $(this.el).html(this.template);
+    this.praxiaItems = _.flatten(this.collection.toJSON()[0]);
+    $(this.el).html(Mustache.to_html($('.fn-carrousel').html(), { message: "Responda las siguientes preguntas" , items: this.praxiaItems }));
     $('.carousel').carousel();
   }
 });
