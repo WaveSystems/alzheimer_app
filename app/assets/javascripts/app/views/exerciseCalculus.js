@@ -20,7 +20,7 @@ AA.Views.exerciseCalculus = Backbone.View.extend({
     _.each(this.collection.toJSON(), function(question){
       var templateItem = Mustache.to_html($('.fn-' + self.templateItemName).html(), {question: question});
       $('.fn-body-table').append(templateItem);
-      exerciseItem = new AA.Views.exerciseCalculusItem({ el: ".fn-item-calculus-" + question.id });
     });
+    exerciseItem = new AA.Views.exerciseCalculusItem();
   }
 });
