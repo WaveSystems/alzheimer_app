@@ -14,6 +14,7 @@
 //= require app/collections/praxias
 //= require app/views/exercises
 //= require app/views/exerciseCalculus
+//= require app/views/exerciseCalculusItem
 //= require app/views/exerciseGnosias
 //= require app/views/exerciseLanguage
 //= require app/views/exerciseMemory

@@ -1,3 +1,4 @@
+= render 'template_items/calculus_item'
 %script.fn-calculus{ type: 'text/template' }
   %h2 Responda las siguientes preguntas
   %table.table.table-striped.table-bordered.table-hover
@@ -7,13 +8,8 @@
           %h4 Problema
         %th 
         %th
-    %tbody
-      {{ #questions }}
-      %tr
-        %td {{ question }}
-        %td
-          %input{ class: "fn-{{question.id}}", name: 'a[answer]', type: "text", placeholder: "Escribe tu respuesta aquí" }
-        %td
-          %span{ class: "submit{{question.id}}" }
-            %a.btn.btn-inverse Enviar
-      {{ /questions }}
+    %tbody.fn-body-table
+  %input{ type: 'hidden', class: 'fn-questions-number', value: '{{ length }}' }
+  %input{ type: 'hidden', class: 'fn-correct-answers-number', value: '0' }
+  %input{ type: 'hidden', class: 'fn-answered-questions-number', value: '0' }
+  = render 'template_items/modal_calculus'

@@ -1,0 +1,10 @@
+%script.fn-item-calculus-template{ type: 'text/template' }
+  %tr{ class: "fn-item-calculus-{{ question.id }}" }
+    %td {{ question.question }}
+    %td
+      %input{ class: "fn-answer", name: 'a[answer]', type: "text", placeholder: "Escribe tu respuesta aquí" }
+      %input{ type: "hidden", class: "fn-this-id", value: "{{ question.id }}"}
+      %input{ type: "hidden", class: "fn-correct-answer", value: "{{ question.answer }}"}
+    %td
+      %span{ class: "submit{{ question.id }}" }
+        %a.btn.btn-inverse.fn-send Enviar
