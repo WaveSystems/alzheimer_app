@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require libs/mustache
 //= require libs/bootstrap
-//= require libs/active_admin
 //= require libs/underscore
 //= require libs/backbone
 //= require preload
@@ -22,6 +21,7 @@
 //= require app/views/exerciseOrientation
 //= require app/views/exercisePraxias
 //= require router
+//= require active_admin
 
 $(function(){
   AA.Initialize();

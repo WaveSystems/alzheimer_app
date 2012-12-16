@@ -9,7 +9,7 @@ ActiveAdmin.register Orientation do
   end
 
   index :as => :grid do |orientation|
-    link_to(image_tag(orientation.image.url(:medium)))
+    link_to(image_tag(orientation.image.url(:medium)), admin_orientation_path(orientation))
   end
   
 end

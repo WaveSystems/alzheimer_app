@@ -9,7 +9,7 @@ ActiveAdmin.register Language do
   end
 
   index :as => :grid do |language|
-    link_to(image_tag(language.image.url(:medium)))
+    link_to(image_tag(language.image.url(:medium)), admin_language_path(language))
   end
   
 end

@@ -10,7 +10,7 @@ ActiveAdmin.register Memoria do
   end
 
   index :as => :grid do |memoria|
-    link_to(image_tag(memoria.image.url(:small)))
+    link_to(image_tag(memoria.image.url(:small)), admin_memorium_path(memoria))
   end
   
 end

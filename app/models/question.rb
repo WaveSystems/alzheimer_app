@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   attr_accessor :answer_raw
   
   def answer_raw
-    self.answer unless self.answer.nil?
+    self.answer.join(',') unless self.answer.nil?
   end
 
   def answer_raw=(value)
