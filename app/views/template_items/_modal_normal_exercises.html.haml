@@ -1,0 +1,15 @@
+.fn-finished-questions.modal.hide.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+  .modal-header
+    %button.close(data-dismiss="modal" aria-hidden="true") x
+    %h3 ¡Felicidades!
+  .modal-body
+    %p Haz terminado los ejercicios de {{ exercise_name }} satisfactoriamente.
+    %p Sus resultados son:
+    .fn-correct-answers-count
+    Ejercicios correctos.
+    .fn-incorrect-answers-count
+    Ejercicios incorrectos.
+    %p Total de ejercicios resueltos: {{ length }}
+  .modal-footer
+    %center
+      %button.btn.btn-inverse(data-dismiss="modal" aria-hidden="true") Continuar

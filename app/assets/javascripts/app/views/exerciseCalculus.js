@@ -11,7 +11,7 @@ AA.Views.exerciseCalculus = Backbone.View.extend({
 
   render: function(){
     this.questions = this.collection.toJSON();
-    $(this.el).html(Mustache.to_html($('.fn-' + this.templateName).html(), { length: this.questions.length }));
+    $(this.el).html(Mustache.to_html($('.fn-' + this.templateName).html(), { length: this.questions.length, exercise_name: "cálculo" }));
     this.renderItems();
     
   },
