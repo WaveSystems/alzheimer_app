@@ -9,6 +9,7 @@ AA.Views.exerciseCalculusItem = Backbone.View.extend({
       var answer = this.$el.find('.fn-answer').val();
       console.log(answer);
       this.$el.find('.fn-answer').val('');
+      this.$el.hide(true);
     }
   }
 
