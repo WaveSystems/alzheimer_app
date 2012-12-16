@@ -30,10 +30,6 @@ AA.Views.exerciseGnosiaItem = Backbone.View.extend({
     answeredQuestionsNumber++;
     $('.fn-answered-questions-number').val(answeredQuestionsNumber);
 
-    console.log('Numero de preguntas contestadas: ' + answeredQuestionsNumber);
-    console.log('Numero de preguntas correctas: ' + correctAnswersNumber);
-    console.log('---------------------------------------------------')
-
     if (answeredQuestionsNumber == questionsNumber){
       $('.fn-finished-questions').modal('show');
       incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
