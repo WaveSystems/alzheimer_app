@@ -1,6 +1,7 @@
 AA.Views.exerciseGnosiaItem = Backbone.View.extend({
 
   events: {
+    'click .fn-selected-answer' : 'hideAndScore'
   },
   
   initialize: function(){
@@ -8,8 +9,37 @@ AA.Views.exerciseGnosiaItem = Backbone.View.extend({
   },
   
   hideAndScore: function(e){
+    var selectedAnswer = $(e.target).parent().text();
+    this.$el.hide();
+    this.evaluate();
   }, 
   
   evaluate: function(){
+    var correctAnswers = this.$el.find('.fn-correct-answer').val().split(","),
+        answer = this.$el.find('.fn-selected-answer').val(),
+        questionsNumber = parseInt($('.fn-questions-number').val()),
+        correctAnswersNumber = parseInt($('.fn-correct-answers-number').val()),
+        answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val()),
+        evaluatedAnswer = _.find(correctAnswers, function(correctAnswer){ return correctAnswer == answer });
+
+    if ( evaluatedAnswer != undefined ) {
+      correctAnswersNumber++;
+      $('.fn-correct-answers-number').val(correctAnswersNumber);
+    }
+
+    answeredQuestionsNumber++;
+    $('.fn-answered-questions-number').val(answeredQuestionsNumber);
+
+    console.log('Numero de preguntas contestadas: ' + answeredQuestionsNumber);
+    console.log('Numero de preguntas correctas: ' + correctAnswersNumber);
+    console.log('---------------------------------------------------')
+
+    if (answeredQuestionsNumber == questionsNumber){
+      $('.fn-finished-questions').modal('show');
+      incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
+      $('.fn-correct-answers-count').html("<p> Respuestas correctas: " + correctAnswersNumber + "</p>");
+      $('.fn-incorrect-answers-count').html("<p> Respuestas incorrectas: " + incorrectAnswersNumber + "</p>");
+    }
   }
+
 });

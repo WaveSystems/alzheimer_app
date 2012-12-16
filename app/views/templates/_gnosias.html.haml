@@ -3,3 +3,7 @@
   %h2(align = "center") Responda a las siguientes preguntas
 
   %ul.fn-gnosias-list.thumbnails
+  %input{ type: 'hidden', class: 'fn-questions-number', value: '{{ length }}' }
+  %input{ type: 'hidden', class: 'fn-correct-answers-number', value: '0' }
+  %input{ type: 'hidden', class: 'fn-answered-questions-number', value: '0' }
+  = render 'template_items/modal_gnosias'

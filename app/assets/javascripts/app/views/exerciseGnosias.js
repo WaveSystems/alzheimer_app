@@ -11,7 +11,7 @@ AA.Views.exerciseGnosias = Backbone.View.extend({
 
   render: function(){
     this.gnosias = _.flatten(this.collection.toJSON()[0]);
-    $(this.el).html(Mustache.to_html($('.fn-' + this.templateName).html()), { length: this.gnosias.length });
+    $(this.el).html(Mustache.to_html($('.fn-' + this.templateName).html(), { length: this.gnosias.length }));
     this.renderItems();
   }, 
   
