@@ -3,6 +3,7 @@ class Gnosia < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "210x141>"}
 
   serialize :answer, Array
+  serialize :wrong_answer, Array
   attr_accessor :answer_raw
 
   api_accessible :gnosias do |t|
@@ -20,6 +21,15 @@ class Gnosia < ActiveRecord::Base
   def answer_raw=(value)
     self.answer = []
     self.answer = value.split(',')
+  end
+
+  def wrong_answer_raw
+    self.wrong_answer.join(',') unless self.answer.nil?
+  end
+
+  def wrong_answer_raw=(value)
+    self.wrong_answer = []
+    self.wrong_answer = value.split(',')
   end
 
   def image_path
