@@ -1,3 +1,4 @@
+= render 'template_items/memory_answers_item'
 %script.fn-memory{ type: 'text/template' }
   %h2 {{ message }}
   #myCarousel.carousel.slide(data-interval="60000")
@@ -7,4 +8,8 @@
       {{ #items }}
       %div{ class: "item", align: "center"}
         %img{ src: "{{ image_path }}" }
+        %input{ type: 'hidden', class: "fn-correct-answer", value: "{{ answer }}"}
       {{ /items }}
+  .options.bottom-position
+    %a.btn.btn-inverse.fn-start
+      %h1 Comenzar
