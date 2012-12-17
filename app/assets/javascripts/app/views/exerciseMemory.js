@@ -29,6 +29,7 @@ AA.Views.exerciseMemory = Backbone.View.extend({
         correctAnswer = targetElement.find('.fn-correct-answer').val(),
         wrongAnswers = targetElement.find('.fn-incorrect-answers').val().split(',');
     $('.options').html(Mustache.to_html($('.fn-memories-options').html(), { correct_answer: correctAnswer, wrong_answers: wrongAnswers }));
+    $('.carousel').carousel('pause');
   },
 
   hideAndScore: function(e){

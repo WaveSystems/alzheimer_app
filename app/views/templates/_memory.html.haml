@@ -9,7 +9,7 @@
       %div{ class: "item", align: "center"}
         %img{ src: "{{ image_path }}" }
         %input{ type: 'hidden', class: "fn-correct-answer", value: "{{ answer }}"}
-        %input{ type: 'hidden', class: "fn-incorrect-answers", value: "{{ wrong_answers }}"}
+        %input{ type: 'hidden', class: "fn-incorrect-answers", value: "{{ wrong_answer }}"}
       {{ /items }}
   .options.bottom-position
     %a.btn.btn-inverse.fn-start
