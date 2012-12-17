@@ -31,18 +31,19 @@ INSERT INTO "schema_migrations" VALUES('20120509075733');
 INSERT INTO "schema_migrations" VALUES('20120509075806');
 INSERT INTO "schema_migrations" VALUES('20120509095016');
 INSERT INTO "schema_migrations" VALUES('20121216163042');
+INSERT INTO "schema_migrations" VALUES('20121217004005');
 CREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "resource_id" varchar(255) NOT NULL, "resource_type" varchar(255) NOT NULL, "author_id" integer, "author_type" varchar(255), "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "namespace" varchar(255));
 CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "username" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "group_id" integer);
-INSERT INTO "users" VALUES(1,'flashdevlin@gmail.com','','$2a$10$rtVaCcAN130Hko7zAFe0dOlDYpArfIZRgd7SPY5oLqSUFWaCaBJ2q',NULL,NULL,NULL,24,'2012-12-16 23:59:46.528292','2012-12-16 05:47:19.167950','127.0.0.1','127.0.0.1','2012-05-09 06:59:35.691492','2012-12-16 23:59:46.529798',NULL);
+INSERT INTO "users" VALUES(1,'flashdevlin@gmail.com','','$2a$10$rtVaCcAN130Hko7zAFe0dOlDYpArfIZRgd7SPY5oLqSUFWaCaBJ2q',NULL,NULL,NULL,25,'2012-12-17 04:51:22.848302','2012-12-16 23:59:46.528292','127.0.0.1','127.0.0.1','2012-05-09 06:59:35.691492','2012-12-17 04:51:22.849593',NULL);
 INSERT INTO "users" VALUES(2,'noel@hotmail.com','','$2a$10$eYH5lwTKo.3oD38DNznME.feKLXgGf9CId2ySKRDJPoPQwxUi6Lky',NULL,NULL,NULL,1,'2012-05-09 14:55:39.160596','2012-05-09 14:55:39.160596','127.0.0.1','127.0.0.1','2012-05-09 14:55:39.049873','2012-05-09 14:55:39.161782',NULL);
-INSERT INTO "users" VALUES(3,'cavjzz@gmail.com','','$2a$10$JezKsDSdCxBsKNpqWXbAIez.gSm4UHZGWcz.lzHY.8o6jFioeiN4.',NULL,NULL,'2012-12-17 03:14:42.768839',7,'2012-12-17 03:14:42.998538','2012-12-17 00:17:15.574034','127.0.0.1','127.0.0.1','2012-05-25 14:41:51.203993','2012-12-17 03:14:42.999998',NULL);
+INSERT INTO "users" VALUES(3,'cavjzz@gmail.com','','$2a$10$JezKsDSdCxBsKNpqWXbAIez.gSm4UHZGWcz.lzHY.8o6jFioeiN4.',NULL,NULL,NULL,11,'2012-12-17 04:48:17.336905','2012-12-17 04:47:40.260608','127.0.0.1','127.0.0.1','2012-05-25 14:41:51.203993','2012-12-17 04:48:17.338204',NULL);
 INSERT INTO "users" VALUES(4,'gloria@hotmail.com','','$2a$10$iJgKp8A2OGoA5Typr1mH1.YpTS0.gPBV2JWiK/rTer9QCXVa5YUF.',NULL,NULL,NULL,1,'2012-06-04 04:08:38.305315','2012-06-04 04:08:38.305315','127.0.0.1','127.0.0.1','2012-06-04 04:08:38.094850','2012-06-04 04:08:38.306907',NULL);
 INSERT INTO "users" VALUES(5,'robles@hotmail.com','','$2a$10$NP1oQR.6eKdwTbikPzmd4eJPK3x7oVM7Pb1OqaG7mFwal5dZUYDtG',NULL,NULL,NULL,1,'2012-11-14 16:58:53.099725','2012-11-14 16:58:53.099725','127.0.0.1','127.0.0.1','2012-11-14 16:58:52.874278','2012-11-14 16:58:53.100693',NULL);
 INSERT INTO "users" VALUES(6,'vicente@hotmail.com','Vicente','$2a$10$RIyfQ6SbAVyUHz0MZzlXlel5.iILeuqHmCfS0876NLh/7v//2ajV6',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,'2012-11-14 17:09:20.205066','2012-11-14 17:09:20.205066',1);
 INSERT INTO "users" VALUES(7,'rcano1@hotmail.com','','$2a$10$MiC8TqweVYK3znhnDZbl6eWDGmpNxzw9ZOJBUqbp9mq47pYDybSXe',NULL,NULL,NULL,4,'2012-11-21 01:28:58.916290','2012-11-21 01:23:42.513785','127.0.0.1','127.0.0.1','2012-11-20 23:55:20.196175','2012-11-21 01:28:58.917278',NULL);
 INSERT INTO "users" VALUES(8,'rcanosegundo@gmail.com','Rosa Cano','$2a$10$rkgeLl/ZVxKkmhDEwOYRMOJ1VmSnt1o34Z1TxFWPadvviF/0peYHK',NULL,NULL,NULL,2,'2012-11-29 23:50:23.876198','2012-11-29 23:42:42.323810','127.0.0.1','127.0.0.1','2012-11-29 23:23:49.241735','2012-11-29 23:50:23.876977',2);
 CREATE TABLE "admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-INSERT INTO "admin_users" VALUES(1,'admin@example.com','$2a$10$lrLP/V/nDf6IrIIkY.kX1Ovv3s1kvAvMjadt939W07AAhyfC/pWJq',NULL,NULL,'2012-12-17 03:17:49.941801',14,'2012-12-17 03:17:50.037877','2012-12-16 23:59:52.075429','127.0.0.1','127.0.0.1','2012-05-09 06:50:39.387737','2012-12-17 03:17:50.039152');
+INSERT INTO "admin_users" VALUES(1,'admin@example.com','$2a$10$lrLP/V/nDf6IrIIkY.kX1Ovv3s1kvAvMjadt939W07AAhyfC/pWJq',NULL,NULL,NULL,16,'2012-12-17 04:51:27.037331','2012-12-17 04:48:19.447667','127.0.0.1','127.0.0.1','2012-05-09 06:50:39.387737','2012-12-17 04:51:27.038526');
 CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar(255), "lastname" varchar(255), "birthdate" date, "street" varchar(255), "neighborhood" varchar(255), "zipcode" varchar(255), "country" varchar(255), "tutor_name" varchar(255), "ocupation" varchar(255), "bio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "city" varchar(255), "number" integer, "state" varchar(255));
 INSERT INTO "profiles" VALUES(1,'Jorge','Robles Grajeda','1990-05-17','Priv. Primo de verdad','Centro','28000','Mexico','Juan Antonio Chávez','Ing. Sistemas ','Nací el 17 de Mayo de 1990 en El Grullo, Jalisco, México. Es un pueblo pequeño, pero bonito. El tejuino es lo mejor. Estuve en la escuela primera Niños Héroes cerca del centro de la ciudad, después cursé la secundaría en la federal Jaime Torres Bodet. La escuela preparatoria fue lo mejor, estudié en el Bachillerato Tecnológico de El Grullo, y me titulé como Técnico en informática administrativa. Actualmente curso la carrera de Ingeniería en sistemas computacionales y me voy a sumar 40 años para este proyecto. Así que ahora tengo 62 años. Próximamente actualizaré mi biografía, solo necesito recordarla, y vivirla...','2012-05-09 07:01:16.068489','2012-05-25 14:55:56.084644',1,'Colima',422,'Colima');
 INSERT INTO "profiles" VALUES(2,'Noel','Escobedo','1952-05-09','Cuauhtemoc','Centro','28000','Mexico','Damaso Lopez','Ingeniero en sistemas','ALgo','2012-05-09 14:57:28.698223','2012-05-09 14:57:28.698223',2,'Colima',15,'Colima');
@@ -61,8 +62,8 @@ INSERT INTO "groups" VALUES(5,'Los de la abuelita','aspodapsoikda',4,'2012-11-29
 INSERT INTO "groups" VALUES(6,'Los amigos cercanos','kpaoskdpa',4,'2012-11-29 23:35:37.496942','2012-11-29 23:35:37.496942');
 INSERT INTO "groups" VALUES(7,'Adpaosdkpasodjapsojd','p',4,'2012-11-29 23:35:44.774626','2012-11-29 23:35:44.774626');
 CREATE TABLE "application_admin_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-INSERT INTO "application_admin_users" VALUES(1,'cavjzz@gmail.com','$2a$10$l6OvkIldknUDRfNKPt.WWejL35/5qgKhoynsALkuMVr00xm3Gv2aG',NULL,NULL,NULL,3,'2012-12-11 07:55:57.157678','2012-12-11 07:55:33.127426','127.0.0.1','127.0.0.1','2012-11-14 17:06:34.951484','2012-12-11 07:55:57.158422');
-INSERT INTO "application_admin_users" VALUES(2,'flashdevlin@hotmail.com','$2a$10$mAbnutsoPYAdmHGojIyvR.ENlA1fM1a.AtARpiQJlic0Z2JhyowrO',NULL,NULL,NULL,4,'2012-12-06 03:08:03.135432','2012-11-29 23:19:46.850566','127.0.0.1','127.0.0.1','2012-11-29 22:46:56.257385','2012-12-06 03:08:03.137602');
+INSERT INTO "application_admin_users" VALUES(1,'cavjzz@gmail.com','$2a$10$l6OvkIldknUDRfNKPt.WWejL35/5qgKhoynsALkuMVr00xm3Gv2aG',NULL,NULL,NULL,5,'2012-12-17 04:47:51.146609','2012-12-17 04:47:30.127280','127.0.0.1','127.0.0.1','2012-11-14 17:06:34.951484','2012-12-17 04:47:51.147792');
+INSERT INTO "application_admin_users" VALUES(2,'flashdevlin@hotmail.com','$2a$10$mAbnutsoPYAdmHGojIyvR.ENlA1fM1a.AtARpiQJlic0Z2JhyowrO',NULL,NULL,NULL,5,'2012-12-17 04:49:31.149372','2012-12-06 03:08:03.135432','127.0.0.1','127.0.0.1','2012-11-29 22:46:56.257385','2012-12-17 04:49:31.150566');
 CREATE TABLE "organizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "descripcion" varchar(255), "address" varchar(255), "city" varchar(255), "county" varchar(255), "state" varchar(255), "country" varchar(255), "phone" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "application_admin_user_id" integer);
 INSERT INTO "organizations" VALUES(1,'Veteranos del ITC','Grupo de apoyo para veteranos de ITC','Av. Tecnológico #123','Colima','Villa de Álvarez','Colima','Mexico','3212412312','2012-11-14 17:08:03.798393','2012-11-14 17:08:03.798393',1);
 INSERT INTO "organizations" VALUES(2,'ITC','Adultos mayores del ITC','Av. Tecnológico #123','Colima','Villa de Alvaréz','Colima','Mexico','3121234321','2012-11-29 22:47:49.239113','2012-11-29 22:47:49.239113',2);
@@ -749,7 +750,277 @@ INSERT INTO "gnosia" VALUES(81,'G65','lapiz.jpg','image/jpeg',22213,'2012-12-17 
 - Lapicera
 - Pluma
 ');
-CREATE TABLE "memoria" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "answer" varchar(255), "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "gnosia" VALUES(82,'G66','leon.jpg','image/jpeg',42645,'2012-12-17 04:34:30.195580','2012-12-17 04:34:30.758827','2012-12-17 04:34:30.758827','---
+- León
+','¿Cuál es el nombre de este animal?','---
+- Tigre
+- Puma
+');
+INSERT INTO "gnosia" VALUES(83,'G67','lightbulb.jpg','image/jpeg',10624,'2012-12-17 04:35:25.826503','2012-12-17 04:35:25.925917','2012-12-17 04:35:25.925917','---
+- Foco
+','¿Cuál es el nombre de este objeto?','---
+- Lámpara
+- Cerillo
+');
+INSERT INTO "gnosia" VALUES(84,'G68','llaves.jpg','image/jpeg',31170,'2012-12-17 04:52:08.786166','2012-12-17 04:52:08.867217','2012-12-17 04:52:08.867217','---
+- Llaves
+','¿Cuál es el nombre de este objeto?','---
+- Cerrojo
+- Puerta
+');
+INSERT INTO "gnosia" VALUES(85,'G69','maria-v.jpg','image/jpeg',12834,'2012-12-17 04:53:56.884985','2012-12-17 04:53:56.961384','2012-12-17 04:53:56.961384','---
+- Vaso
+','¿Cuál es el nombre de este objeto?','---
+- Copa
+- Jarra
+');
+INSERT INTO "gnosia" VALUES(86,'G70','osito.jpg','image/jpeg',14334,'2012-12-17 04:55:02.598890','2012-12-17 04:55:02.733764','2012-12-17 04:55:02.733764','---
+- Osito
+','¿Cuál es el nombre de este objeto?','---
+- Llavero
+- Almohada
+');
+INSERT INTO "gnosia" VALUES(87,'G71','PAN-7.jpg','image/jpeg',66811,'2012-12-17 04:56:04.330634','2012-12-17 04:56:04.413674','2012-12-17 04:56:04.413674','---
+- Control remoto
+','¿Cuál es el nombre de este objeto?','---
+- Llavero
+- Alarma
+');
+INSERT INTO "gnosia" VALUES(88,'G72','_paraguas.jpg','image/jpeg',24332,'2012-12-17 04:56:47.482041','2012-12-17 04:56:47.566015','2012-12-17 04:56:47.566015','---
+- Paraguas
+','¿Cuál es el nombre de este objeto?','---
+- Bastón
+- Sombrero
+');
+INSERT INTO "gnosia" VALUES(89,'G73','peine-ref409.jpg','image/jpeg',3568,'2012-12-17 04:57:42.355427','2012-12-17 04:57:42.425415','2012-12-17 04:57:42.425415','---
+- Peine
+','¿Cuál es el nombre de este objeto?','---
+- Cepillo
+- Tenedor
+');
+INSERT INTO "gnosia" VALUES(90,'G74','refrigerador.jpg','image/jpeg',29811,'2012-12-17 04:58:22.697359','2012-12-17 04:58:22.792705','2012-12-17 04:58:22.792705','---
+- Refrigerador
+','¿Cuál es el nombre de este objeto?','---
+- Horno
+- Microondas
+');
+INSERT INTO "gnosia" VALUES(91,'G75','zapato_dfsfsdf.jpg','image/jpeg',49047,'2012-12-17 04:58:55.059964','2012-12-17 04:58:55.243161','2012-12-17 04:59:05.441263','---
+- Zapatos
+','¿Cuál es el nombre de este objeto?','---
+- Sandalias
+- Huarache
+');
+INSERT INTO "gnosia" VALUES(92,'G76','tijera_picadas_el_buen_placer.jpg','image/jpeg',21008,'2012-12-17 04:59:44.261404','2012-12-17 04:59:44.355747','2012-12-17 04:59:44.355747','---
+- Tijeras
+','¿Cuál es el nombre de este objeto?','---
+- Pinzas
+- Navaja
+');
+INSERT INTO "gnosia" VALUES(93,'G77','th_352fe25daf686bdb4edca223c921acea_04d1eaec91215020b32b78a9f1320159_huarache.jpg','image/jpeg',16470,'2012-12-17 05:00:15.308430','2012-12-17 05:00:15.394438','2012-12-17 05:00:15.394438','---
+- Huarache
+','¿Cuál es el nombre de este objeto?','---
+- Zapato
+- Sandalia
+');
+INSERT INTO "gnosia" VALUES(94,'G78','tenedor.jpg','image/jpeg',3551,'2012-12-17 05:00:42.831518','2012-12-17 05:00:42.901415','2012-12-17 05:00:42.901415','---
+- Tenedor
+','¿Cuál es el nombre de este objeto?','---
+- Cuchillo
+- Cuchara
+');
+INSERT INTO "gnosia" VALUES(95,'G79','telefono.jpg','image/jpeg',35777,'2012-12-17 05:01:26.487746','2012-12-17 05:01:26.582501','2012-12-17 05:01:26.582501','---
+- Teléfono
+','¿Cuál es el nombre de este objeto?','---
+- Cabina
+- Fax
+');
+INSERT INTO "gnosia" VALUES(96,'G80','reloj-de-pared-fondo-blanco_MLV-O-3313080547_102012.jpg','image/jpeg',22822,'2012-12-17 05:02:00.271540','2012-12-17 05:02:00.370980','2012-12-17 05:02:00.370980','---
+- Reloj
+','¿Cuál es el nombre de este objeto?','---
+- Segundero
+- Alarma
+');
+CREATE TABLE "memoria" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "answer" varchar(255), "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wrong_answer" varchar(255));
+INSERT INTO "memoria" VALUES(13,'M1','Tortuga ratón gato y perico','M3.jpg','image/jpeg',143223,'2012-12-17 05:10:40.548480','2012-12-17 05:10:41.240586','2012-12-17 05:10:41.240586','---
+- Ratón gato perico y tortuga
+- ! '' Gato ratón perico y tortuga''
+');
+INSERT INTO "memoria" VALUES(14,'M2','Gato perico ratón y tortuga','M4.jpg','image/jpeg',139510,'2012-12-17 05:21:32.004394','2012-12-17 05:21:32.762394','2012-12-17 05:21:32.762394','---
+- Perico gato ratón y tortuga
+- ! '' Tortuga perico gato y ratón''
+');
+INSERT INTO "memoria" VALUES(15,'M3','Gato tortuga ratón y lagartija.','M5.jpg','image/jpeg',143906,'2012-12-17 05:24:55.581947','2012-12-17 05:24:56.259958','2012-12-17 05:24:56.259958','---
+- Tortuga gato ratón y lagartija
+- ! '' Ratón tortuga gato y lagartija''
+');
+INSERT INTO "memoria" VALUES(16,'M4','Ratón gato tortuga y lagartija','M6.jpg','image/jpeg',141890,'2012-12-17 05:26:20.783931','2012-12-17 05:26:21.460364','2012-12-17 05:26:21.460364','---
+- Gato ratón tortuga y lagartija
+- ! '' Lagartija ratón gato y tortuga''
+');
+INSERT INTO "memoria" VALUES(17,'M5','Naranja plátano piña y uva','M7.jpg','image/jpeg',136429,'2012-12-17 05:27:19.826906','2012-12-17 05:27:20.503278','2012-12-17 05:27:20.503278','---
+- Plátano piña naranja y uva
+- ! '' Uva plátano piña y naranja''
+');
+INSERT INTO "memoria" VALUES(18,'M6','Piña plátano uva y naranja','M8.jpg','image/jpeg',136905,'2012-12-17 05:28:18.687029','2012-12-17 05:28:19.359440','2012-12-17 05:28:19.359440','---
+- Piña plátano naranja y uva
+- ! '' Uva naranja piña y plátano''
+');
+INSERT INTO "memoria" VALUES(19,'M7','Plátano piña uva y naranja','M9.jpg','image/jpeg',136564,'2012-12-17 05:29:04.202316','2012-12-17 05:29:05.047277','2012-12-17 05:29:05.047277','---
+- Piña uva naranja y plátano
+- ! '' Plátano piña naranja y uva''
+');
+INSERT INTO "memoria" VALUES(20,'M8','Plátano piña uva y cereza','M10.jpg','image/jpeg',136449,'2012-12-17 05:29:51.510083','2012-12-17 05:29:52.179941','2012-12-17 05:29:52.179941','---
+- Piña cereza uva y plátano
+- ! '' Plátano piña cereza y uva''
+');
+INSERT INTO "memoria" VALUES(21,'M9','Plátano cereza uva y manzana','M11.jpg','image/jpeg',127863,'2012-12-17 05:30:39.154338','2012-12-17 05:30:39.854082','2012-12-17 05:30:39.854082','---
+- Cereza plátano uva y manzana
+- ! '' Manzana cereza plátano y uva''
+');
+INSERT INTO "memoria" VALUES(22,'M10','Cereza uva plátano y manzana','M12.jpg','image/jpeg',127829,'2012-12-17 05:31:34.277010','2012-12-17 05:31:34.938591','2012-12-17 05:31:34.938591','---
+- Uva cereza plátano y manzana
+- ! '' Manzana cereza plátano y uva''
+');
+INSERT INTO "memoria" VALUES(23,'M11','Cereza manzana plátano y uva','M13.jpg','image/jpeg',128070,'2012-12-17 05:32:16.171487','2012-12-17 05:32:16.875286','2012-12-17 05:32:16.875286','---
+- Uva plátano manzana y cereza
+- ! '' Cereza manzana uva y plátano''
+');
+INSERT INTO "memoria" VALUES(24,'M12','Cereza manzana fresa y uva','M14.jpg','image/jpeg',131428,'2012-12-17 05:33:00.994274','2012-12-17 05:33:01.682567','2012-12-17 05:33:01.682567','---
+- Manzana fresa uva y cereza
+- ! '' Cereza fresa uva y manzana''
+');
+INSERT INTO "memoria" VALUES(25,'M13','Fresa manzana uva y cereza','M15.jpg','image/jpeg',131269,'2012-12-17 05:33:49.940736','2012-12-17 05:33:50.606608','2012-12-17 05:33:50.606608','---
+- Manzana uva cereza y fresa
+- ! '' Manzana fresa uva y cereza''
+');
+INSERT INTO "memoria" VALUES(26,'M14','Fresa cereza manzana y uva','M16.jpg','image/jpeg',131252,'2012-12-17 05:34:39.005201','2012-12-17 05:34:39.675972','2012-12-17 05:34:39.675972','---
+- Fresa cereza uva y manzana
+- ! '' Fresa uva cereza y manzana''
+');
+INSERT INTO "memoria" VALUES(27,'M15','Uva manzana cereza y fresa','M17.jpg','image/jpeg',131377,'2012-12-17 05:35:17.155889','2012-12-17 05:35:17.840987','2012-12-17 05:35:37.490120','---
+- Uva manzana fresa y cereza
+- ! '' Cereza fresa manzana y uva''
+');
+INSERT INTO "memoria" VALUES(28,'M16','Reloj camisa cámara y lentes','M18.jpg','image/jpeg',128799,'2012-12-17 05:36:34.720047','2012-12-17 05:36:35.399818','2012-12-17 05:36:35.399818','---
+- Camisa cámara lentes y reloj
+- ! '' Reloj lentes camisa y cámara''
+');
+INSERT INTO "memoria" VALUES(29,'M17','Cámara camisa reloj y lentes','M19.jpg','image/jpeg',128745,'2012-12-17 05:38:41.092805','2012-12-17 05:38:41.786054','2012-12-17 05:38:41.786054','---
+- Camisa cámara reloj y lentes
+- ! '' Lentes reloj cámara y camisa''
+');
+INSERT INTO "memoria" VALUES(30,'M18','Lentes cámara reloj y camisa','M20.jpg','image/jpeg',128642,'2012-12-17 05:39:34.045098','2012-12-17 05:39:34.722050','2012-12-17 05:39:34.722050','---
+- Cámara reloj lentes y camisa
+- ! '' Camisa cámara reloj y lentes''
+');
+INSERT INTO "memoria" VALUES(31,'M19','Playera reloj lentes y cámara','M21.jpg','image/jpeg',128742,'2012-12-17 05:40:24.794313','2012-12-17 05:40:25.510162','2012-12-17 05:40:25.510162','---
+- Cámara playera reloj y lentes
+- ! '' Lentes cámara playera y reloj''
+');
+INSERT INTO "memoria" VALUES(32,'M20','Huevo reloj lentes y playera','M22.jpg','image/jpeg',116477,'2012-12-17 05:41:05.161866','2012-12-17 05:41:05.846473','2012-12-17 05:41:05.846473','---
+- Reloj lentes playera y huevo
+- ! '' Huevo reloj playera y lentes''
+');
+INSERT INTO "memoria" VALUES(33,'M21','Dados lentes huevo y playera','M23.jpg','image/jpeg',115986,'2012-12-17 05:41:42.800485','2012-12-17 05:41:43.492126','2012-12-17 05:41:43.492126','---
+- Dados lentes playera y huevo
+- ! '' Huevo playera dados y lentes''
+');
+INSERT INTO "memoria" VALUES(34,'M22','Dados lentes osito y playera','M24.jpg','image/jpeg',127424,'2012-12-17 05:42:31.720152','2012-12-17 05:42:32.501662','2012-12-17 05:42:32.501662','---
+- Lentes osito dados y playera
+- ! '' Playera dados lentes y osito''
+');
+INSERT INTO "memoria" VALUES(35,'M23','Dados osito lentes y playera','M25.jpg','image/jpeg',127345,'2012-12-17 05:43:12.394859','2012-12-17 05:43:13.081735','2012-12-17 05:43:13.081735','---
+- Osito dados lentes y playera
+- ! '' Playera dados osito y lentes''
+');
+INSERT INTO "memoria" VALUES(36,'M24','Playera osito dados y lentes','M26.jpg','image/jpeg',127205,'2012-12-17 05:44:02.997471','2012-12-17 05:44:03.681825','2012-12-17 05:44:03.681825','---
+- Osito dados lentes y playera
+- ! '' Playera dados osito y lentes''
+');
+INSERT INTO "memoria" VALUES(37,'M25','Playera cacahuate dado y osito','M27.jpg','image/jpeg',131122,'2012-12-17 05:44:57.467695','2012-12-17 05:44:58.151040','2012-12-17 05:44:58.151040','---
+- Cacahuate playera dado y osito
+- ! '' Osito playera dado y cacahuate''
+');
+INSERT INTO "memoria" VALUES(38,'M26','Cacahuate playera osito y dado','M28.jpg','image/jpeg',131288,'2012-12-17 05:45:42.154534','2012-12-17 05:45:42.830277','2012-12-17 05:45:42.830277','---
+- Dado cacahuate playera y osito
+- ! '' Osito playera cacahuate y dado''
+');
+INSERT INTO "memoria" VALUES(39,'M27','Cacahuate martillo osito y dado','M29.jpg','image/jpeg',127824,'2012-12-17 05:46:31.233603','2012-12-17 05:46:31.900034','2012-12-17 05:46:31.900034','---
+- Dado cacahuate martillo y osito
+- ! '' Osito martillo cacahuate y dado''
+');
+INSERT INTO "memoria" VALUES(40,'M28','Dados osito martillo y taza','M30.jpg','image/jpeg',123375,'2012-12-17 05:47:12.913470','2012-12-17 05:47:13.722545','2012-12-17 05:47:13.722545','---
+- Taza dados osito y martillo
+- ! '' Dados osito taza y martillo''
+');
+INSERT INTO "memoria" VALUES(41,'M29','Taza osito dados y martillo','M31.jpg','image/jpeg',123715,'2012-12-17 05:47:51.597198','2012-12-17 05:47:52.263109','2012-12-17 05:47:52.263109','---
+- Taza dados martillo y osito
+- ! '' Osito dados martillo y taza''
+');
+INSERT INTO "memoria" VALUES(42,'M30','Bicicleta taza dados y martillo','M32.jpg','image/jpeg',128387,'2012-12-17 05:48:44.274975','2012-12-17 05:48:44.968617','2012-12-17 05:48:44.968617','---
+- Bicicleta dados martillo y taza
+- ! '' Taza bicicleta dados y martillo''
+');
+INSERT INTO "memoria" VALUES(43,'M31','Bicicleta silla martillo y taza','M33.jpg','image/jpeg',127117,'2012-12-17 05:49:29.334938','2012-12-17 05:49:30.087048','2012-12-17 05:49:30.087048','---
+- Silla martillo taza y bicicleta
+- ! '' Bicicleta silla taza y martillo''
+');
+INSERT INTO "memoria" VALUES(44,'M32','Taza teléfono silla y bicicleta','M34.jpg','image/jpeg',137432,'2012-12-17 05:49:50.092762','2012-12-17 05:49:50.798791','2012-12-17 05:50:24.936869','---
+- Teléfono taza silla y bicicleta
+- ! '' Bicicleta taza teléfono y silla''
+');
+INSERT INTO "memoria" VALUES(45,'M33','Silla bicicleta taza y teléfono','M35.jpg','image/jpeg',137538,'2012-12-17 05:51:40.456306','2012-12-17 05:51:41.146324','2012-12-17 05:51:41.146324','---
+- Teléfono bicicleta taza y silla
+- ! '' Silla bicicleta teléfono y taza''
+');
+INSERT INTO "memoria" VALUES(46,'M34','Teléfono silla bicicleta y huarache','M36.jpg','image/jpeg',148755,'2012-12-17 05:52:32.969864','2012-12-17 05:52:33.683369','2012-12-17 05:52:33.683369','---
+- Huarache teléfono silla y bicicleta
+- ! '' Bicicleta teléfono silla y huarache''
+');
+INSERT INTO "memoria" VALUES(47,'M35','Huarache teléfono silla y bicicleta','M37.jpg','image/jpeg',149146,'2012-12-17 05:53:39.444781','2012-12-17 05:53:40.164786','2012-12-17 05:53:40.164786','---
+- Bicicleta huarache teléfono y silla
+- ! '' Silla huarache teléfono y bicicleta''
+');
+INSERT INTO "memoria" VALUES(48,'M36','Huarache guitarra teléfono y silla','M38.jpg','image/jpeg',135449,'2012-12-17 05:54:53.841275','2012-12-17 05:54:54.538063','2012-12-17 05:54:54.538063','---
+- Guitarra huarache teléfono y silla
+- ! '' Silla teléfono huarache y guitarra''
+');
+INSERT INTO "memoria" VALUES(49,'M37','Teléfono sombrero huarache y guitarra','M39.jpg','image/jpeg',145181,'2012-12-17 05:55:56.041723','2012-12-17 05:55:56.725145','2012-12-17 05:55:56.725145','---
+- Guitarra sombrero teléfono y guitarra
+- ! '' Guitarra sombrero guitarra y teléfono''
+');
+INSERT INTO "memoria" VALUES(50,'M38','Libro huarache guitarra y sombrero','M40.jpg','image/jpeg',143542,'2012-12-17 05:56:49.218837','2012-12-17 05:56:49.894662','2012-12-17 05:56:49.894662','---
+- Sombrero huarache guitarra y libro
+- ! '' Libro guitarra huarache y sombrero''
+');
+INSERT INTO "memoria" VALUES(51,'M39','Azul rojo morado y verde','M41.jpg','image/jpeg',93971,'2012-12-17 05:57:36.928903','2012-12-17 05:57:37.624204','2012-12-17 05:57:37.624204','---
+- Rojo azul morado y verde
+- ! '' Verde azul rojo y morado''
+');
+INSERT INTO "memoria" VALUES(52,'M40','Rosa azul rojo y naranja','M42.jpg','image/jpeg',93888,'2012-12-17 05:58:17.011770','2012-12-17 05:58:17.688846','2012-12-17 05:58:17.688846','---
+- Azul rojo rosa y naranja
+- ! '' Naranja azul rojo y rosa''
+');
+INSERT INTO "memoria" VALUES(53,'M41','Naranja azul morado y rojo','M43.jpg','image/jpeg',94162,'2012-12-17 05:58:55.937531','2012-12-17 05:58:56.841284','2012-12-17 05:58:56.841284','---
+- Rojo naranja azul y morado
+- ! '' Morado azul naranja y rojo''
+');
+INSERT INTO "memoria" VALUES(54,'M42','Rosa azul naranja y verde','M44.jpg','image/jpeg',93429,'2012-12-17 05:59:47.009178','2012-12-17 05:59:47.689749','2012-12-17 05:59:47.689749','---
+- Azul rosa naranja y verde
+- ! '' Verde naranja rosa y azul''
+');
+INSERT INTO "memoria" VALUES(55,'M43','Rosa morado azul y morado','M45.jpg','image/jpeg',93614,'2012-12-17 06:00:34.016167','2012-12-17 06:00:34.699025','2012-12-17 06:00:34.699025','---
+- Rosa morado morado y azul
+- ! '' Azul morado rosa y morado''
+');
+INSERT INTO "memoria" VALUES(56,'M44','Azul rojo rojo y azul','M46.jpg','image/jpeg',94238,'2012-12-17 06:01:12.116125','2012-12-17 06:01:12.861402','2012-12-17 06:01:12.861402','---
+- Azul azul rojo y rojo
+- ! '' Rojo azul rojo azul''
+');
+INSERT INTO "memoria" VALUES(57,'M45','Rosa café rojo y naranja','M47.jpg','image/jpeg',93126,'2012-12-17 06:01:59.782915','2012-12-17 06:02:00.436869','2012-12-17 06:02:00.436869','---
+- Naranja rosa café y rojo
+- ! '' Rojo café rosa y naranja''
+');
 CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "start_at" datetime, "end_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "description" text, "done" boolean);
 INSERT INTO "events" VALUES(1,'Apagar la estufa','2012-05-09 09:19:00.000000','2012-05-09 09:20:00.000000','2012-05-09 09:19:50.951361','2012-05-09 09:19:50.951361',1,'Necesito apagar la estufa porque se me queman los frijolitos.',NULL);
 INSERT INTO "events" VALUES(2,'Apagar las luces','2012-05-09 09:21:00.000000','2012-05-09 09:24:00.000000','2012-05-09 09:22:24.178966','2012-05-09 09:22:24.178966',1,'Apagar las luces de la casa.',NULL);
@@ -1081,11 +1352,11 @@ INSERT INTO "praxia" VALUES(108,'PV35','2012-12-16 06:17:03.164112','2012-12-16 
 INSERT INTO "praxia" VALUES(109,'PV36','2012-12-16 06:17:39.753624','2012-12-16 06:17:39.753624','PV36.jpg','image/jpeg',84310,'2012-12-16 06:17:39.195644');
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('admin_users',1);
-INSERT INTO "sqlite_sequence" VALUES('memoria',11);
+INSERT INTO "sqlite_sequence" VALUES('memoria',57);
 INSERT INTO "sqlite_sequence" VALUES('users',8);
 INSERT INTO "sqlite_sequence" VALUES('profiles',8);
 INSERT INTO "sqlite_sequence" VALUES('questions',101);
-INSERT INTO "sqlite_sequence" VALUES('gnosia',81);
+INSERT INTO "sqlite_sequence" VALUES('gnosia',96);
 INSERT INTO "sqlite_sequence" VALUES('languages',126);
 INSERT INTO "sqlite_sequence" VALUES('orientations',100);
 INSERT INTO "sqlite_sequence" VALUES('praxia',109);
