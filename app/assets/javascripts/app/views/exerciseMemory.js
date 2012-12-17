@@ -15,7 +15,7 @@ AA.Views.exerciseMemory = Backbone.View.extend({
 
   render: function(){
     this.memoryItems = _.flatten(this.collection.toJSON()[0]);
-    $(this.el).html(Mustache.to_html($('.fn-memory').html(), { message: "Responda las siguientes preguntas" , items: this.memoryItems, length: this.memoryItems.length }));
+    $(this.el).html(Mustache.to_html($('.fn-memory').html(), { message: "Responda las siguientes preguntas" , items: this.memoryItems, length: this.memoryItems.length, exercise_name: "memoria" }));
     $('.carousel').carousel('pause');
   }, 
 
