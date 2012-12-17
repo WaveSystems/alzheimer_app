@@ -33,8 +33,8 @@ AA.Views.exerciseGnosiaItem = Backbone.View.extend({
     if (answeredQuestionsNumber == questionsNumber){
       $('.fn-finished-questions').modal('show');
       incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
-      $('.fn-correct-answers-count').html("<p> Respuestas correctas: " + correctAnswersNumber + "</p>");
-      $('.fn-incorrect-answers-count').html("<p> Respuestas incorrectas: " + incorrectAnswersNumber + "</p>");
+      $('.fn-correct-answers-count').html(correctAnswersNumber);
+      $('.fn-incorrect-answers-count').html(incorrectAnswersNumber);
     }
   }
 
