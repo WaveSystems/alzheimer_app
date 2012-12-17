@@ -11,6 +11,6 @@ AA.Views.exerciseLanguage = Backbone.View.extend({
   render: function(){
     this.languageItems = _.flatten(this.collection.toJSON()[0]);
     $(this.el).html(Mustache.to_html($('.fn-carrousel').html(), { message: "Responda las siguientes preguntas" , items: this.languageItems }));
-    $('.carousel').carousel();
+    $('.carousel').carousel({ interval: 60000 });
   }
 });
