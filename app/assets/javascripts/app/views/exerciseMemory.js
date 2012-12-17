@@ -46,8 +46,8 @@ AA.Views.exerciseMemory = Backbone.View.extend({
     if ( selectedAnswer === correctAnswer ) {
       correctAnswersNumber++;
       $('.fn-correct-answers-number').val(correctAnswersNumber);
-      incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
     }
+    incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
 
     if (answeredQuestionsNumber === questionsNumber){
       $('.fn-finished-questions').modal('show');
@@ -59,11 +59,6 @@ AA.Views.exerciseMemory = Backbone.View.extend({
       answeredQuestionsNumber = 0;
     }
 
-    console.log('Preguntas correctas: ' + correctAnswersNumber);
-    console.log('Preguntas incorrectas: ' + incorrectAnswersNumber);
-    console.log('Preguntas contestadas: ' + answeredQuestionsNumber);
-    console.log('Preguntas totales: ' + questionsNumber);
-    console.log('------------------------------------------------')
     $('.fn-answers').hide();
     $('.carousel').carousel('next');
   }
