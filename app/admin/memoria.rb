@@ -3,7 +3,8 @@ ActiveAdmin.register Memoria do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :answer_raw, :label => 'Answer'
+      f.input :answer
+      f.input :wrong_answer_raw, :label => 'Wrong answer'
       f.input :image, :as => :file
     end
     f.buttons

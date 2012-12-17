@@ -6,12 +6,12 @@
       %p {{ gnosia.question }}
       %form
         {{ #gnosia.answer }}
-        %label.radio
+        %label.radio.colored-option
           %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ . }}" }
           {{ . }}
         {{ /gnosia.answer }}
         {{ #gnosia.wrong_answer }}
-        %label.radio
+        %label.radio.colored-option
           %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ . }}" }
           {{ . }}
         {{ /gnosia.wrong_answer }}

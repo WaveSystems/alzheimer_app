@@ -1,0 +1,10 @@
+%script.fn-memories-options{ type: 'text/template' }
+  %form.fn-answers
+    %label.radio.with-width
+      %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ correct_answer }}" }
+      {{ correct_answer }}
+    {{ #wrong_answers }}
+    %label.radio.with-width
+      %input.fn-selected-answer{ type: 'radio', name: "answer", value: "{{ . }}" }
+      {{ . }}
+    {{ /wrong_answers }}

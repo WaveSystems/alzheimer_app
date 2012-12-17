@@ -11,6 +11,6 @@ AA.Views.exerciseOrientation = Backbone.View.extend({
   render: function(){
     this.orientationItems = _.flatten(this.collection.toJSON()[0]);
     $(this.el).html(Mustache.to_html($('.fn-carrousel').html(), { message: "Responda las siguientes preguntas" , items: this.orientationItems }));
-    $('.carousel').carousel();
+    $('.carousel').carousel({ interval: 60000 });
   }
 });

@@ -25,7 +25,7 @@ class Gnosia < ActiveRecord::Base
   end
 
   def wrong_answer_raw
-    self.wrong_answer.join(',') unless self.answer.nil?
+    self.wrong_answer.join(',') unless self.wrong_answer.nil?
   end
 
   def wrong_answer_raw=(value)
