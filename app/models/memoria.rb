@@ -22,6 +22,6 @@ class Memoria < ActiveRecord::Base
 
   def wrong_answer_raw=(value)
     self.wrong_answer = []
-    self.wrong_answer.value.split(',')
+    self.wrong_answer = value.split(',')
   end
 end
