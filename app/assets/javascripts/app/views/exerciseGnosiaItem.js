@@ -9,33 +9,40 @@ AA.Views.exerciseGnosiaItem = Backbone.View.extend({
   },
   
   hideAndScore: function(e){
-    var selectedAnswer = $(e.target).parent().text();
+    var selectedAnswer = $(e.target).val();
     this.$el.hide();
-    this.evaluate();
+    this.evaluate(selectedAnswer);
   }, 
   
-  evaluate: function(){
-    var correctAnswers = this.$el.find('.fn-correct-answer').val().split(","),
-        answer = this.$el.find('.fn-selected-answer').val(),
+  evaluate: function(selectedAnswer){
+    var correctAnswer = this.$el.find('.fn-correct-answer').val(),
         questionsNumber = parseInt($('.fn-questions-number').val()),
         correctAnswersNumber = parseInt($('.fn-correct-answers-number').val()),
         answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val()),
-        evaluatedAnswer = _.find(correctAnswers, function(correctAnswer){ return correctAnswer == answer });
+        incorrectAnswersNumber;
 
-    if ( evaluatedAnswer != undefined ) {
+    if ( correctAnswer === selectedAnswer ){
       correctAnswersNumber++;
       $('.fn-correct-answers-number').val(correctAnswersNumber);
     }
 
+    incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
     answeredQuestionsNumber++;
     $('.fn-answered-questions-number').val(answeredQuestionsNumber);
 
     if (answeredQuestionsNumber == questionsNumber){
       $('.fn-finished-questions').modal('show');
-      incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
       $('.fn-correct-answers-count').html(correctAnswersNumber);
       $('.fn-incorrect-answers-count').html(incorrectAnswersNumber);
     }
+
+    console.log('Respuesta correcta: ' + correctAnswer);
+    console.log('Respuesta elegida: ' + selectedAnswer);
+    console.log('Respuestas correctas: ' + correctAnswersNumber);
+    console.log('Respuestas incorrectas: ' + incorrectAnswersNumber);
+    console.log('Respuestas totales: ' + questionsNumber);
+    console.log('Respuestas contestadas: ' + answeredQuestionsNumber);
+    console.log('-----------------------------------------');
   }
 
 });
