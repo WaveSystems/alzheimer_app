@@ -15,7 +15,7 @@ AA.Views.exerciseMemory = Backbone.View.extend({
 
   render: function(){
     this.memoryItems = _.flatten(this.collection.toJSON()[0]);
-    $(this.el).html(Mustache.to_html($('.fn-memory').html(), { message: "Responda las siguientes preguntas" , items: this.memoryItems }));
+    $(this.el).html(Mustache.to_html($('.fn-memory').html(), { message: "Responda las siguientes preguntas" , items: this.memoryItems, length: this.memoryItems.length }));
     $('.carousel').carousel('pause');
   }, 
 
@@ -33,7 +33,29 @@ AA.Views.exerciseMemory = Backbone.View.extend({
 
   hideAndScore: function(e){
     var selectedAnswer = $(e.target).val(),
-        correctAnswer = $('.fn-correct-answer').val();
+        targetElement = $('.item.active'),
+        correctAnswer = targetElement.find('.fn-correct-answer').val(),
+        questionsNumber = parseInt($('.fn-questions-number').val()),
+        correctAnswersNumber = parseInt($('.fn-correct-answers-number').val()),
+        answeredQuestionsNumber = parseInt($('.fn-answered-questions-number').val());
+    
+
+    answeredQuestionsNumber++;
+    $('.fn-answered-questions-number').val(answeredQuestionsNumber);
+
+    if ( selectedAnswer === correctAnswer ) {
+      correctAnswersNumber++;
+      $('.fn-correct-answers-number').val(correctAnswersNumber);
+      incorrectAnswersNumber = questionsNumber - correctAnswersNumber;
+    }
+
+    if (answeredQuestionsNumber === questionsNumber){
+      $('.fn-finished-questions').modal('show');
+      $('.fn-correct-answers-count').html(correctAnswersNumber);
+      $('.fn-incorrect-answers-count').html(incorrectAnswersNumber);
+      $('.fn-start').show();
+    }
+
     $('.fn-answers').hide();
     $('.carousel').carousel('next');
   }
