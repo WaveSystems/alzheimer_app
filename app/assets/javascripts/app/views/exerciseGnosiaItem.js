@@ -36,13 +36,6 @@ AA.Views.exerciseGnosiaItem = Backbone.View.extend({
       $('.fn-incorrect-answers-count').html(incorrectAnswersNumber);
     }
 
-    console.log('Respuesta correcta: ' + correctAnswer);
-    console.log('Respuesta elegida: ' + selectedAnswer);
-    console.log('Respuestas correctas: ' + correctAnswersNumber);
-    console.log('Respuestas incorrectas: ' + incorrectAnswersNumber);
-    console.log('Respuestas totales: ' + questionsNumber);
-    console.log('Respuestas contestadas: ' + answeredQuestionsNumber);
-    console.log('-----------------------------------------');
   }
 
 });
