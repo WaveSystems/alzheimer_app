@@ -53,9 +53,17 @@ AA.Views.exerciseMemory = Backbone.View.extend({
       $('.fn-finished-questions').modal('show');
       $('.fn-correct-answers-count').html(correctAnswersNumber);
       $('.fn-incorrect-answers-count').html(incorrectAnswersNumber);
-      $('.fn-start').show();
+      $('.options').html("<a class='btn btn-inverse fn-start'><h3>Comenzar</h3></a>");
+      $('.fn-correct-answers-number').val(0);
+      $('.fn-answered-questions-number').val(0);
+      answeredQuestionsNumber = 0;
     }
 
+    console.log('Preguntas correctas: ' + correctAnswersNumber);
+    console.log('Preguntas incorrectas: ' + incorrectAnswersNumber);
+    console.log('Preguntas contestadas: ' + answeredQuestionsNumber);
+    console.log('Preguntas totales: ' + questionsNumber);
+    console.log('------------------------------------------------')
     $('.fn-answers').hide();
     $('.carousel').carousel('next');
   }
