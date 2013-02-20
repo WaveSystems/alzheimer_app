@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'activeadmin'
